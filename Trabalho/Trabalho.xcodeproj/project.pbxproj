@@ -1,0 +1,443 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5AFEDBDB1AFA9882004D9990 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFEDBDA1AFA9882004D9990 /* AppDelegate.swift */; };
+		5AFEDBDE1AFA9882004D9990 /* Trabalho.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5AFEDBDC1AFA9882004D9990 /* Trabalho.xcdatamodeld */; };
+		5AFEDBE01AFA9882004D9990 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFEDBDF1AFA9882004D9990 /* ViewController.swift */; };
+		5AFEDBE31AFA9882004D9990 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AFEDBE11AFA9882004D9990 /* Main.storyboard */; };
+		5AFEDBE51AFA9882004D9990 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AFEDBE41AFA9882004D9990 /* Images.xcassets */; };
+		5AFEDBE81AFA9882004D9990 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AFEDBE61AFA9882004D9990 /* LaunchScreen.xib */; };
+		5AFEDBF41AFA9882004D9990 /* TrabalhoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFEDBF31AFA9882004D9990 /* TrabalhoTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5AFEDBEE1AFA9882004D9990 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AFEDBCD1AFA9882004D9990 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5AFEDBD41AFA9882004D9990;
+			remoteInfo = Trabalho;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5AFEDBD51AFA9882004D9990 /* Trabalho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trabalho.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AFEDBD91AFA9882004D9990 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AFEDBDA1AFA9882004D9990 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5AFEDBDD1AFA9882004D9990 /* Trabalho.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Trabalho.xcdatamodel; sourceTree = "<group>"; };
+		5AFEDBDF1AFA9882004D9990 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5AFEDBE21AFA9882004D9990 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5AFEDBE41AFA9882004D9990 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5AFEDBE71AFA9882004D9990 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		5AFEDBED1AFA9882004D9990 /* TrabalhoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrabalhoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AFEDBF21AFA9882004D9990 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AFEDBF31AFA9882004D9990 /* TrabalhoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrabalhoTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5AFEDBD21AFA9882004D9990 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AFEDBEA1AFA9882004D9990 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5AFEDBCC1AFA9882004D9990 = {
+			isa = PBXGroup;
+			children = (
+				5AFEDBD71AFA9882004D9990 /* Trabalho */,
+				5AFEDBF01AFA9882004D9990 /* TrabalhoTests */,
+				5AFEDBD61AFA9882004D9990 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5AFEDBD61AFA9882004D9990 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5AFEDBD51AFA9882004D9990 /* Trabalho.app */,
+				5AFEDBED1AFA9882004D9990 /* TrabalhoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5AFEDBD71AFA9882004D9990 /* Trabalho */ = {
+			isa = PBXGroup;
+			children = (
+				5AFEDBDA1AFA9882004D9990 /* AppDelegate.swift */,
+				5AFEDBDF1AFA9882004D9990 /* ViewController.swift */,
+				5AFEDBE11AFA9882004D9990 /* Main.storyboard */,
+				5AFEDBE41AFA9882004D9990 /* Images.xcassets */,
+				5AFEDBE61AFA9882004D9990 /* LaunchScreen.xib */,
+				5AFEDBDC1AFA9882004D9990 /* Trabalho.xcdatamodeld */,
+				5AFEDBD81AFA9882004D9990 /* Supporting Files */,
+			);
+			path = Trabalho;
+			sourceTree = "<group>";
+		};
+		5AFEDBD81AFA9882004D9990 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5AFEDBD91AFA9882004D9990 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5AFEDBF01AFA9882004D9990 /* TrabalhoTests */ = {
+			isa = PBXGroup;
+			children = (
+				5AFEDBF31AFA9882004D9990 /* TrabalhoTests.swift */,
+				5AFEDBF11AFA9882004D9990 /* Supporting Files */,
+			);
+			path = TrabalhoTests;
+			sourceTree = "<group>";
+		};
+		5AFEDBF11AFA9882004D9990 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5AFEDBF21AFA9882004D9990 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5AFEDBD41AFA9882004D9990 /* Trabalho */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5AFEDBF71AFA9882004D9990 /* Build configuration list for PBXNativeTarget "Trabalho" */;
+			buildPhases = (
+				5AFEDBD11AFA9882004D9990 /* Sources */,
+				5AFEDBD21AFA9882004D9990 /* Frameworks */,
+				5AFEDBD31AFA9882004D9990 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Trabalho;
+			productName = Trabalho;
+			productReference = 5AFEDBD51AFA9882004D9990 /* Trabalho.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5AFEDBEC1AFA9882004D9990 /* TrabalhoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5AFEDBFA1AFA9882004D9990 /* Build configuration list for PBXNativeTarget "TrabalhoTests" */;
+			buildPhases = (
+				5AFEDBE91AFA9882004D9990 /* Sources */,
+				5AFEDBEA1AFA9882004D9990 /* Frameworks */,
+				5AFEDBEB1AFA9882004D9990 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5AFEDBEF1AFA9882004D9990 /* PBXTargetDependency */,
+			);
+			name = TrabalhoTests;
+			productName = TrabalhoTests;
+			productReference = 5AFEDBED1AFA9882004D9990 /* TrabalhoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5AFEDBCD1AFA9882004D9990 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = ThePhodas;
+				TargetAttributes = {
+					5AFEDBD41AFA9882004D9990 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					5AFEDBEC1AFA9882004D9990 = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = 5AFEDBD41AFA9882004D9990;
+					};
+				};
+			};
+			buildConfigurationList = 5AFEDBD01AFA9882004D9990 /* Build configuration list for PBXProject "Trabalho" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5AFEDBCC1AFA9882004D9990;
+			productRefGroup = 5AFEDBD61AFA9882004D9990 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5AFEDBD41AFA9882004D9990 /* Trabalho */,
+				5AFEDBEC1AFA9882004D9990 /* TrabalhoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5AFEDBD31AFA9882004D9990 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AFEDBE31AFA9882004D9990 /* Main.storyboard in Resources */,
+				5AFEDBE81AFA9882004D9990 /* LaunchScreen.xib in Resources */,
+				5AFEDBE51AFA9882004D9990 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AFEDBEB1AFA9882004D9990 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5AFEDBD11AFA9882004D9990 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AFEDBE01AFA9882004D9990 /* ViewController.swift in Sources */,
+				5AFEDBDE1AFA9882004D9990 /* Trabalho.xcdatamodeld in Sources */,
+				5AFEDBDB1AFA9882004D9990 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AFEDBE91AFA9882004D9990 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AFEDBF41AFA9882004D9990 /* TrabalhoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5AFEDBEF1AFA9882004D9990 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5AFEDBD41AFA9882004D9990 /* Trabalho */;
+			targetProxy = 5AFEDBEE1AFA9882004D9990 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5AFEDBE11AFA9882004D9990 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5AFEDBE21AFA9882004D9990 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5AFEDBE61AFA9882004D9990 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5AFEDBE71AFA9882004D9990 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5AFEDBF51AFA9882004D9990 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5AFEDBF61AFA9882004D9990 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5AFEDBF81AFA9882004D9990 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Trabalho/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5AFEDBF91AFA9882004D9990 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Trabalho/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		5AFEDBFB1AFA9882004D9990 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TrabalhoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Trabalho.app/Trabalho";
+			};
+			name = Debug;
+		};
+		5AFEDBFC1AFA9882004D9990 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TrabalhoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Trabalho.app/Trabalho";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5AFEDBD01AFA9882004D9990 /* Build configuration list for PBXProject "Trabalho" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AFEDBF51AFA9882004D9990 /* Debug */,
+				5AFEDBF61AFA9882004D9990 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5AFEDBF71AFA9882004D9990 /* Build configuration list for PBXNativeTarget "Trabalho" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AFEDBF81AFA9882004D9990 /* Debug */,
+				5AFEDBF91AFA9882004D9990 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5AFEDBFA1AFA9882004D9990 /* Build configuration list for PBXNativeTarget "TrabalhoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AFEDBFB1AFA9882004D9990 /* Debug */,
+				5AFEDBFC1AFA9882004D9990 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5AFEDBDC1AFA9882004D9990 /* Trabalho.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5AFEDBDD1AFA9882004D9990 /* Trabalho.xcdatamodel */,
+			);
+			currentVersion = 5AFEDBDD1AFA9882004D9990 /* Trabalho.xcdatamodel */;
+			path = Trabalho.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 5AFEDBCD1AFA9882004D9990 /* Project object */;
+}

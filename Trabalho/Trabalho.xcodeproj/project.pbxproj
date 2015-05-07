@@ -32,6 +32,7 @@
 		5AFEDC1C1AFA9D73004D9990 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AFEDC1B1AFA9D73004D9990 /* CoreGraphics.framework */; };
 		5AFEDC1E1AFA9D89004D9990 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AFEDC1D1AFA9D89004D9990 /* AudioToolbox.framework */; };
 		5AFEDC211AFAA7AF004D9990 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFEDC201AFAA7AF004D9990 /* RegisterViewController.swift */; };
+		71BDA9791AFBE421004DF152 /* BeaconFinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BDA9781AFBE421004DF152 /* BeaconFinderViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		5AFEDC1B1AFA9D73004D9990 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		5AFEDC1D1AFA9D89004D9990 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		5AFEDC201AFAA7AF004D9990 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		71BDA9781AFBE421004DF152 /* BeaconFinderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconFinderViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,11 +136,11 @@
 			isa = PBXGroup;
 			children = (
 				5AFEDBDA1AFA9882004D9990 /* AppDelegate.swift */,
+				71BDA97D1AFBE483004DF152 /* Storage */,
+				71BDA97C1AFBE47E004DF152 /* View */,
+				71BDA97A1AFBE46D004DF152 /* ViewController */,
 				5AFEDBDF1AFA9882004D9990 /* ViewController.swift */,
-				5AFEDBE11AFA9882004D9990 /* Main.storyboard */,
 				5AFEDC201AFAA7AF004D9990 /* RegisterViewController.swift */,
-				5AFEDBE41AFA9882004D9990 /* Images.xcassets */,
-				5AFEDBE61AFA9882004D9990 /* LaunchScreen.xib */,
 				5AFEDBDC1AFA9882004D9990 /* Trabalho.xcdatamodeld */,
 				5AFEDBD81AFA9882004D9990 /* Supporting Files */,
 			);
@@ -192,6 +194,31 @@
 				5AFEDC1D1AFA9D89004D9990 /* AudioToolbox.framework */,
 			);
 			name = frameworks;
+			sourceTree = "<group>";
+		};
+		71BDA97A1AFBE46D004DF152 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				71BDA9781AFBE421004DF152 /* BeaconFinderViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		71BDA97C1AFBE47E004DF152 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5AFEDBE11AFA9882004D9990 /* Main.storyboard */,
+				5AFEDBE41AFA9882004D9990 /* Images.xcassets */,
+				5AFEDBE61AFA9882004D9990 /* LaunchScreen.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		71BDA97D1AFBE483004DF152 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Storage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +323,7 @@
 			files = (
 				5AFEDBE01AFA9882004D9990 /* ViewController.swift in Sources */,
 				5AFEDBDE1AFA9882004D9990 /* Trabalho.xcdatamodeld in Sources */,
+				71BDA9791AFBE421004DF152 /* BeaconFinderViewController.swift in Sources */,
 				5AFEDBDB1AFA9882004D9990 /* AppDelegate.swift in Sources */,
 				5AFEDC211AFAA7AF004D9990 /* RegisterViewController.swift in Sources */,
 			);

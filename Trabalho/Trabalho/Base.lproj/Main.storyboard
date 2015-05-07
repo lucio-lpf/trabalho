@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="V7w-6K-cST">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="V7w-6K-cST">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -58,20 +59,46 @@
             </objects>
             <point key="canvasLocation" x="1056.5" y="223.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Beacon Finder View Controller-->
         <scene sceneID="Ior-4m-l6J">
             <objects>
-                <viewController id="Ajf-GU-fyY" sceneMemberID="viewController">
+                <viewController id="Ajf-GU-fyY" customClass="BeaconFinderViewController" customModule="Trabalho" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tum-5h-pdJ"/>
                         <viewControllerLayoutGuide type="bottom" id="c0c-nJ-cns"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="avZ-LN-842">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ABg-94-F3c">
+                                <rect key="frame" x="0.0" y="-60" width="600" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Destroy the tower!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3H-H1-cDu">
+                                        <rect key="frame" x="219" y="19" width="161" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.39958175505050508" green="0.39958175505050508" blue="0.39958175505050508" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Mgo-fz-MSW"/>
+                                    <constraint firstAttribute="centerX" secondItem="N3H-H1-cDu" secondAttribute="centerX" id="g7N-D2-Bhr"/>
+                                    <constraint firstAttribute="centerY" secondItem="N3H-H1-cDu" secondAttribute="centerY" id="odc-xq-2fV"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ABg-94-F3c" firstAttribute="top" secondItem="avZ-LN-842" secondAttribute="topMargin" constant="-60" id="Pun-sK-JY3"/>
+                            <constraint firstAttribute="centerX" secondItem="ABg-94-F3c" secondAttribute="centerX" id="b15-b5-K9r"/>
+                            <constraint firstAttribute="width" secondItem="ABg-94-F3c" secondAttribute="width" id="qs2-7d-oc2"/>
+                        </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="constraintNotification" destination="Pun-sK-JY3" id="6Ge-9P-Qmx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eBI-1g-Sk2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

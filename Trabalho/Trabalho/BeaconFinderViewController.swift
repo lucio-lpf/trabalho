@@ -51,15 +51,25 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        PFCloud.initialize()
+        PFCloud.instanceMethodForSelector(Selector("hello"))
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
     }
-    
+
+    @IBAction func logoutButton(sender: AnyObject) {
+        
+        PFUser.logOut()
+        self.navigationController?.popToRootViewControllerAnimated(true)
+        
+    }
     func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         if status == CLAuthorizationStatus.AuthorizedAlways {
             locationManager.startMonitoringForRegion(beaconRegion)

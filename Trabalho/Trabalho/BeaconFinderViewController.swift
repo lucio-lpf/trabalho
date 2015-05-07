@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 let uuid = NSUUID(UUIDString: "1A8D83AD-44EC-42F9-A5A9-989B2477D800")
 let identifier = "beacon.identifier"
@@ -51,13 +52,13 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationManager.delegate = self
+        locationManager.requestAlwaysAuthorization()
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
-        locationManager.delegate = self
-        locationManager.requestAlwaysAuthorization()
     }
     
     func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
@@ -89,22 +90,6 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
                 
                 if beacon.proximity.rawValue == 1 {
                     canDestroyTower = true
-                    
-//                    constraintNotification.constant = 0
-//                    
-//                    UIView.animateWithDuration(1.0) {
-//                        self.view.layoutIfNeeded()
-//                    }
-//                    
-//                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(2 * NSEC_PER_SEC)), dispatch_get_main_queue()) {
-//                        
-//                        self.constraintNotification.constant = -100
-//                        
-//                        UIView.animateWithDuration(1.0) {
-//                            self.view.layoutIfNeeded()
-//                        }
-//                    }
-                    
                 } else {
                     canDestroyTower = false
                 }

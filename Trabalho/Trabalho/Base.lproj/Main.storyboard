@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="V7w-6K-cST">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ajf-GU-fyY">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Trabalho" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="Trabalho" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -69,14 +69,14 @@
                         <viewControllerLayoutGuide type="bottom" id="c0c-nJ-cns"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="avZ-LN-842">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ABg-94-F3c">
-                                <rect key="frame" x="0.0" y="-60" width="600" height="60"/>
+                                <rect key="frame" x="0.0" y="-60" width="375" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Destroy the tower!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3H-H1-cDu">
-                                        <rect key="frame" x="219" y="19" width="161" height="24"/>
+                                        <rect key="frame" x="107" y="19" width="161" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -103,7 +103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eBI-1g-Sk2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1616.5" y="614.5"/>
+            <point key="canvasLocation" x="1616.5" y="648.5"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="edQ-8y-hly">
@@ -144,12 +144,13 @@
                         <outlet property="emailField" destination="ddN-9K-6eY" id="haw-of-3Mg"/>
                         <outlet property="userField" destination="AYS-rt-gdG" id="TTy-Ei-ZP4"/>
                         <segue destination="2vQ-hI-s1J" kind="unwind" identifier="backToMaster" unwindAction="unwind:" id="xpg-zI-Rcv"/>
+                        <segue destination="Ajf-GU-fyY" kind="show" identifier="registerOk" id="l4g-h3-y9K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rHZ-6s-w4B" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="2vQ-hI-s1J" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1616.5" y="-132.5"/>
+            <point key="canvasLocation" x="1616.5" y="-196.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RXc-nk-rrq">
@@ -170,4 +171,7 @@
             <point key="canvasLocation" x="244" y="223"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="l4g-h3-y9K"/>
+    </inferredMetricsTieBreakers>
 </document>

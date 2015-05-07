@@ -6,8 +6,7 @@
 //  Copyright (c) 2015 ThePhodas. All rights reserved.
 //
 
-import Foundation
-import Parse
+import UIKit
 
 class RegisterViewController: UIViewController {
     
@@ -21,24 +20,23 @@ class RegisterViewController: UIViewController {
         newUser.password = "123"
         newUser.email = emailField.text
         
-        newUser.signUpInBackgroundWithBlock { (Bool:Bool, error:NSError?) -> Void in
-            if (error == nil){
-                self.navigationController?.popToRootViewControllerAnimated(true)
+        RegisterStorage().signUpWithUser(newUser, blockSuccess: { () -> Void in
+            LoginStorage().loginWithUsername(newUser.username!, pass: newUser.password!, blockSuccess: { () -> Void in
+                self.performSegueWithIdentifier("registerOk", sender: nil)
+            }, blockFailure: { (error) -> () in
                 let alertController = UIAlertView()
-                alertController.title = "Login Successful"
-                alertController.message = "Come back and do your login!"
+                alertController.title = "Error"
+                alertController.message = error.description
                 alertController.addButtonWithTitle("Ok")
                 alertController.show()
-            }
-            else{
-                let alertController = UIAlertView()
-                alertController.title = "Erro"
-                alertController.message = error?.description
-                alertController.addButtonWithTitle("Ok")
-                alertController.show()
-                
-            }
-            
+            })
+        }) { (error) -> Void in
+            let alertController = UIAlertView()
+            alertController.title = "Error"
+            alertController.message = error.description
+            alertController.addButtonWithTitle("Ok")
+            alertController.show()
         }
     }
+    
 }

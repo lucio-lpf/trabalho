@@ -11,6 +11,10 @@ import Parse
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var userField: UITextField!
+    
+    @IBOutlet weak var passField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +26,13 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func loginButton(sender: AnyObject) {
+        PFUser.logInWithUsernameInBackground(userField, passField) { (PFUser?, NSError?) -> Void in
+            <#code#>
+        }
+    }
+    
+    @IBAction func unwind(segue: UIStoryboardSegue) {}
 
 }
 

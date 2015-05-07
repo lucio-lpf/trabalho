@@ -31,6 +31,7 @@
 		5AFEDC1A1AFA9D67004D9990 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AFEDC191AFA9D67004D9990 /* MobileCoreServices.framework */; };
 		5AFEDC1C1AFA9D73004D9990 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AFEDC1B1AFA9D73004D9990 /* CoreGraphics.framework */; };
 		5AFEDC1E1AFA9D89004D9990 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AFEDC1D1AFA9D89004D9990 /* AudioToolbox.framework */; };
+		5AFEDC211AFAA7AF004D9990 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFEDC201AFAA7AF004D9990 /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		5AFEDC191AFA9D67004D9990 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		5AFEDC1B1AFA9D73004D9990 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		5AFEDC1D1AFA9D89004D9990 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		5AFEDC201AFAA7AF004D9990 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 				5AFEDBDA1AFA9882004D9990 /* AppDelegate.swift */,
 				5AFEDBDF1AFA9882004D9990 /* ViewController.swift */,
 				5AFEDBE11AFA9882004D9990 /* Main.storyboard */,
+				5AFEDC201AFAA7AF004D9990 /* RegisterViewController.swift */,
 				5AFEDBE41AFA9882004D9990 /* Images.xcassets */,
 				5AFEDBE61AFA9882004D9990 /* LaunchScreen.xib */,
 				5AFEDBDC1AFA9882004D9990 /* Trabalho.xcdatamodeld */,
@@ -294,6 +297,7 @@
 				5AFEDBE01AFA9882004D9990 /* ViewController.swift in Sources */,
 				5AFEDBDE1AFA9882004D9990 /* Trabalho.xcdatamodeld in Sources */,
 				5AFEDBDB1AFA9882004D9990 /* AppDelegate.swift in Sources */,
+				5AFEDC211AFAA7AF004D9990 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

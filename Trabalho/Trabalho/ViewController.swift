@@ -27,11 +27,22 @@ class ViewController: UIViewController {
     }
 
     @IBAction func loginButton(sender: AnyObject) {
-        PFUser.logInWithUsernameInBackground(userField, passField) { (PFUser?, NSError?) -> Void in
-            <#code#>
+        var user = userField.text
+        var pass = passField.text
+        PFUser.logInWithUsernameInBackground(user, password:pass) {
+            (user: PFUser?, error: NSError?) -> Void in
+            if user != nil {
+                self.performSegueWithIdentifier("loginOk", sender: nil)
+            } else {
+                let alert = UIAlertView()
+                alert.title = "Error"
+                alert.message = error?.description
+                alert.addButtonWithTitle("Ok")
+                alert.show()
+            }
         }
     }
-    
+
     @IBAction func unwind(segue: UIStoryboardSegue) {}
 
 }

@@ -52,6 +52,7 @@
                     <connections>
                         <outlet property="passField" destination="zIk-c9-3df" id="Qkw-2i-19V"/>
                         <outlet property="userField" destination="X2E-bt-aAI" id="B1r-eS-4PJ"/>
+                        <segue destination="Ajf-GU-fyY" kind="show" identifier="loginOk" id="Lgt-AA-YHz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

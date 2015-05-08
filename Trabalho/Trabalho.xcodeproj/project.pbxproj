@@ -13,7 +13,6 @@
 		5AFEDBE31AFA9882004D9990 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AFEDBE11AFA9882004D9990 /* Main.storyboard */; };
 		5AFEDBE51AFA9882004D9990 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AFEDBE41AFA9882004D9990 /* Images.xcassets */; };
 		5AFEDBE81AFA9882004D9990 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AFEDBE61AFA9882004D9990 /* LaunchScreen.xib */; };
-		5AFEDBF41AFA9882004D9990 /* TrabalhoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFEDBF31AFA9882004D9990 /* TrabalhoTests.swift */; };
 		5AFEDC031AFA9CAC004D9990 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AFEDBFD1AFA9CAC004D9990 /* Bolts.framework */; };
 		5AFEDC041AFA9CAC004D9990 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AFEDBFE1AFA9CAC004D9990 /* Parse.framework */; };
 		5AFEDC051AFA9CAC004D9990 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AFEDBFF1AFA9CAC004D9990 /* ParseCrashReporting.framework */; };
@@ -59,7 +58,6 @@
 		5AFEDBE71AFA9882004D9990 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		5AFEDBED1AFA9882004D9990 /* TrabalhoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrabalhoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AFEDBF21AFA9882004D9990 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5AFEDBF31AFA9882004D9990 /* TrabalhoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrabalhoTests.swift; sourceTree = "<group>"; };
 		5AFEDBFD1AFA9CAC004D9990 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		5AFEDBFE1AFA9CAC004D9990 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		5AFEDBFF1AFA9CAC004D9990 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
@@ -165,7 +163,6 @@
 		5AFEDBF01AFA9882004D9990 /* TrabalhoTests */ = {
 			isa = PBXGroup;
 			children = (
-				5AFEDBF31AFA9882004D9990 /* TrabalhoTests.swift */,
 				5AFEDBF11AFA9882004D9990 /* Supporting Files */,
 			);
 			path = TrabalhoTests;
@@ -281,7 +278,7 @@
 				TargetAttributes = {
 					5AFEDBD41AFA9882004D9990 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = 3B423WDN79;
+						DevelopmentTeam = TY5QM4UU69;
 					};
 					5AFEDBEC1AFA9882004D9990 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -348,7 +345,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AFEDBF41AFA9882004D9990 /* TrabalhoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import AudioToolbox
 
 let uuid = NSUUID(UUIDString: "1A8D83AD-44EC-42F9-A5A9-989B2477D800")
 let identifier = "beacon.identifier"
@@ -20,34 +21,7 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     var beaconRegion = CLBeaconRegion(proximityUUID: uuid, identifier: identifier)
     
-    var canDestroyTower = false {
-        didSet {
-            if self == true {
-                constraintNotification.constant = 0
-                
-                UIView.animateWithDuration(1.0) {
-                    self.view.layoutIfNeeded()
-                }
-                
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(2 * NSEC_PER_SEC)), dispatch_get_main_queue()) {
-                    
-                    self.constraintNotification.constant = -100
-                    
-                    UIView.animateWithDuration(1.0) {
-                        self.view.layoutIfNeeded()
-                    }
-                }
-            } else {
-                self.constraintNotification.constant = -100
-                
-                UIView.animateWithDuration(1.0) {
-                    self.view.layoutIfNeeded()
-                }
-            }
-        }
-    }
-    
-    
+    var canDestroyTower = false
     
     
     override func viewDidLoad() {
@@ -108,10 +82,35 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
             
             for beacon in beacons {
                 
-                if beacon.proximity.rawValue == 1 {
+                if canDestroyTower == false && beacon.proximity.rawValue == 1 {
+                
                     canDestroyTower = true
-                } else {
+                    
+                    AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+                    
+                    constraintNotification.constant = 0
+                    
+                    UIView.animateWithDuration(1.0) {
+                        self.view.layoutIfNeeded()
+                    }
+                    
+//                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(2 * NSEC_PER_SEC)), dispatch_get_main_queue()) {
+//                        
+//                        self.constraintNotification.constant = -60
+//                        
+//                        UIView.animateWithDuration(1.0) {
+//                            self.view.layoutIfNeeded()
+//                        }
+//                    }
+                    
+                } else if canDestroyTower == true && beacon.proximity.rawValue != 1 {
                     canDestroyTower = false
+                    
+                    constraintNotification.constant = -60
+                    
+                    UIView.animateWithDuration(1.0) {
+                        self.view.layoutIfNeeded()
+                    }
                 }
             }
         }

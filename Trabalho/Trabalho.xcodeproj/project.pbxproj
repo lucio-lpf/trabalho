@@ -35,6 +35,7 @@
 		71BDA97F1AFBE6E8004DF152 /* LoginStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BDA97E1AFBE6E8004DF152 /* LoginStorage.swift */; };
 		71BDA9861AFBEC1D004DF152 /* RegisterStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BDA9851AFBEC1D004DF152 /* RegisterStorage.swift */; };
 		71F159171AFD305600586EDF /* Beacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F159161AFD305600586EDF /* Beacon.swift */; };
+		71F1591D1AFD402200586EDF /* BeaconStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F1591C1AFD402200586EDF /* BeaconStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		71BDA9821AFBE7DD004DF152 /* Trabalho-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Trabalho-Bridging-Header.h"; sourceTree = "<group>"; };
 		71BDA9851AFBEC1D004DF152 /* RegisterStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterStorage.swift; sourceTree = "<group>"; };
 		71F159161AFD305600586EDF /* Beacon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beacon.swift; sourceTree = "<group>"; };
+		71F1591C1AFD402200586EDF /* BeaconStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +227,7 @@
 			children = (
 				71BDA97E1AFBE6E8004DF152 /* LoginStorage.swift */,
 				71BDA9851AFBEC1D004DF152 /* RegisterStorage.swift */,
+				71F1591C1AFD402200586EDF /* BeaconStorage.swift */,
 			);
 			name = Storage;
 			sourceTree = "<group>";
@@ -278,7 +281,6 @@
 				TargetAttributes = {
 					5AFEDBD41AFA9882004D9990 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = TY5QM4UU69;
 					};
 					5AFEDBEC1AFA9882004D9990 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -338,6 +340,7 @@
 				5AFEDBDB1AFA9882004D9990 /* AppDelegate.swift in Sources */,
 				5AFEDC211AFAA7AF004D9990 /* RegisterViewController.swift in Sources */,
 				71F159171AFD305600586EDF /* Beacon.swift in Sources */,
+				71F1591D1AFD402200586EDF /* BeaconStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

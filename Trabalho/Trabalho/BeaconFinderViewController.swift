@@ -29,17 +29,14 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var query = PFQuery(className: "Tower")
         
-        query.whereKey("minor", equalTo: NSInteger(15))
-        
-        query.getFirstObjectInBackgroundWithBlock { (objects: PFObject?, error: NSError?) -> Void in
+        BeaconStorage().getBeaconWithMinor(16, blockSuccess: { (object) -> Void in
+            let beaconLife = object.objectForKey("Life") as! NSInteger
             
-            if error == nil {
-                println("Ta funfando")
-            } else {
-                println("Erro")
-            }
+            println("Beacon encontrado.")
+            println("Vida do beacon: \(beaconLife)")
+        }) { (error) -> Void in
+            println("Beacon nao encontrado")
         }
     }
     

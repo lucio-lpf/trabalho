@@ -52,9 +52,18 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        var query = PFQuery(className: "Tower")
         
-//        PFCloud.initialize()
-//        PFCloud.instanceMethodForSelector(Selector("hello"))
+        query.whereKey("minor", equalTo: NSInteger(15))
+        
+        query.getFirstObjectInBackgroundWithBlock { (objects: PFObject?, error: NSError?) -> Void in
+            
+            if error == nil {
+                println("Ta funfando")
+            } else {
+                println("Erro")
+            }
+        }
     }
     
     override func viewDidAppear(animated: Bool) {

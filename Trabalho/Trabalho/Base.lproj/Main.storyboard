@@ -117,6 +117,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="Wall" translatesAutoresizingMaskIntoConstraints="NO" id="OOt-x4-NKR">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ABg-94-F3c">
                                 <rect key="frame" x="0.0" y="-60" width="375" height="60"/>
                                 <subviews>
@@ -134,9 +137,37 @@
                                     <constraint firstAttribute="centerY" secondItem="N3H-H1-cDu" secondAttribute="centerY" id="odc-xq-2fV"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ov-3c-fPa">
-                                <rect key="frame" x="16" y="28" width="69" height="30"/>
-                                <state key="normal" title="Logout">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="Are you ready?" translatesAutoresizingMaskIntoConstraints="NO" id="JPm-LX-zXp">
+                                <rect key="frame" x="74" y="86" width="228" height="189"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="228" id="S9O-P3-3ch"/>
+                                    <constraint firstAttribute="height" constant="189" id="tQA-zh-nGa"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yMd-Dl-SbB">
+                                <rect key="frame" x="68" y="328" width="239" height="81"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="239" id="9YO-Og-Key"/>
+                                    <constraint firstAttribute="height" constant="81" id="UY0-5V-ap3"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="play button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="Find and destroy the" translatesAutoresizingMaskIntoConstraints="NO" id="VQ2-SK-8MZ">
+                                <rect key="frame" x="37" y="466" width="301" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="301" id="SHR-E8-uFM"/>
+                                    <constraint firstAttribute="height" constant="59" id="zVI-OY-lb0"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ov-3c-fPa">
+                                <rect key="frame" x="134" y="591" width="108" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="108" id="QiF-gp-k4b"/>
+                                    <constraint firstAttribute="height" constant="46" id="h2n-SV-7W6"/>
+                                </constraints>
+                                <state key="normal" image="logout">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -146,9 +177,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="c0c-nJ-cns" firstAttribute="top" secondItem="2ov-3c-fPa" secondAttribute="bottom" constant="30" id="2Hr-IH-m9R"/>
+                            <constraint firstAttribute="centerX" secondItem="VQ2-SK-8MZ" secondAttribute="centerX" id="ArQ-9q-xzA"/>
+                            <constraint firstAttribute="centerX" secondItem="yMd-Dl-SbB" secondAttribute="centerX" id="D7R-Si-8Vu"/>
+                            <constraint firstItem="yMd-Dl-SbB" firstAttribute="top" secondItem="JPm-LX-zXp" secondAttribute="bottom" constant="53" id="Esa-kA-tXO"/>
+                            <constraint firstItem="JPm-LX-zXp" firstAttribute="top" secondItem="tum-5h-pdJ" secondAttribute="bottom" constant="66" id="Lhl-lk-lJC"/>
+                            <constraint firstAttribute="centerX" secondItem="JPm-LX-zXp" secondAttribute="centerX" id="NNz-Gq-Zng"/>
                             <constraint firstItem="ABg-94-F3c" firstAttribute="top" secondItem="avZ-LN-842" secondAttribute="topMargin" constant="-60" id="Pun-sK-JY3"/>
+                            <constraint firstItem="OOt-x4-NKR" firstAttribute="top" secondItem="avZ-LN-842" secondAttribute="top" id="Yar-i2-fQm"/>
                             <constraint firstAttribute="centerX" secondItem="ABg-94-F3c" secondAttribute="centerX" id="b15-b5-K9r"/>
+                            <constraint firstAttribute="bottom" secondItem="OOt-x4-NKR" secondAttribute="bottom" id="cfn-gr-hi0"/>
+                            <constraint firstItem="VQ2-SK-8MZ" firstAttribute="top" secondItem="yMd-Dl-SbB" secondAttribute="bottom" constant="57" id="gjV-GK-9Vj"/>
+                            <constraint firstAttribute="centerX" secondItem="2ov-3c-fPa" secondAttribute="centerX" id="iyZ-KK-SII"/>
                             <constraint firstAttribute="width" secondItem="ABg-94-F3c" secondAttribute="width" id="qs2-7d-oc2"/>
+                            <constraint firstAttribute="trailing" secondItem="OOt-x4-NKR" secondAttribute="trailing" id="uHj-iY-hCV"/>
+                            <constraint firstItem="OOt-x4-NKR" firstAttribute="leading" secondItem="avZ-LN-842" secondAttribute="leading" id="wWd-uM-bdj"/>
                         </constraints>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
@@ -266,13 +309,17 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Are you ready?" width="411" height="342"/>
+        <image name="Find and destroy the" width="603" height="119"/>
         <image name="Wall" width="750" height="1334"/>
+        <image name="logout" width="208" height="90"/>
+        <image name="play button" width="1431" height="492"/>
         <image name="sign up" width="234" height="100"/>
         <image name="sign up button " width="477" height="164"/>
         <image name="start button" width="477" height="164"/>
         <image name="title" width="538" height="466"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="l4g-h3-y9K"/>
+        <segue reference="Lgt-AA-YHz"/>
     </inferredMetricsTieBreakers>
 </document>

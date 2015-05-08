@@ -53,11 +53,25 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        PFCloud.initialize()
+//        PFCloud.instanceMethodForSelector(Selector("hello"))
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
         
-        PFCloud.initialize()
-        PFCloud.instanceMethodForSelector(Selector("hello"))
+        if CLLocationManager.authorizationStatus() == .AuthorizedAlways {
+            locationManager.startMonitoringForRegion(beaconRegion)
+        }
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        locationManager.stopMonitoringForRegion(beaconRegion)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -72,14 +86,11 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
         self.navigationController?.popToRootViewControllerAnimated(true)
         
     }
+    
     func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         if status == CLAuthorizationStatus.AuthorizedAlways {
             locationManager.startMonitoringForRegion(beaconRegion)
         }
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        locationManager.stopMonitoringForRegion(beaconRegion)
     }
     
     func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
@@ -96,8 +107,6 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
             beaconsFound = beacons as! [CLBeacon]
             
             for beacon in beacons {
-                
-                println("Beacon found: minor = \(beacon.minor)")
                 
                 if beacon.proximity.rawValue == 1 {
                     canDestroyTower = true

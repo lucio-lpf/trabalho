@@ -20,6 +20,10 @@ class RegisterViewController: UIViewController {
         newUser.password = "123"
         newUser.email = emailField.text
         
+        navigationController!.navigationBar.translucent = true
+        navigationController!.navigationBar.shadowImage = UIImage()
+        navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        
         RegisterStorage().signUpWithUser(newUser, blockSuccess: { () -> Void in
             LoginStorage().loginWithUsername(newUser.username!, pass: newUser.password!, blockSuccess: { () -> Void in
                 self.performSegueWithIdentifier("registerOk", sender: nil)

@@ -17,11 +17,14 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var constraintNotification: NSLayoutConstraint!
     
-    var beaconsFound: [CLBeacon] = [CLBeacon]()
+    var beaconsFound: [Beacon] = [Beacon]()
     let locationManager = CLLocationManager()
     var beaconRegion = CLBeaconRegion(proximityUUID: uuid, identifier: identifier)
     
+    var closerBeacon: Beacon?
+    
     var canDestroyTower = false
+    
     
     
     override func viewDidLoad() {
@@ -33,6 +36,8 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        
+        self.becomeFirstResponder()
         
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
@@ -78,42 +83,147 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager!, didRangeBeacons beacons: [AnyObject]!, inRegion region: CLBeaconRegion!) {
         
         if (beacons.count > 0) {
-            beaconsFound = beacons as! [CLBeacon]
+            beaconsFound = beacons as! [Beacon]
             
-            for beacon in beacons {
-                
-                if canDestroyTower == false && beacon.proximity.rawValue == 1 {
-                
-                    canDestroyTower = true
-                    
-                    AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-                    
-                    constraintNotification.constant = 0
-                    
-                    UIView.animateWithDuration(1.0) {
-                        self.view.layoutIfNeeded()
-                    }
-                    
-//                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(2 * NSEC_PER_SEC)), dispatch_get_main_queue()) {
-//                        
-//                        self.constraintNotification.constant = -60
-//                        
-//                        UIView.animateWithDuration(1.0) {
-//                            self.view.layoutIfNeeded()
-//                        }
-//                    }
-                    
-                } else if canDestroyTower == true && beacon.proximity.rawValue != 1 {
-                    canDestroyTower = false
-                    
-                    constraintNotification.constant = -60
-                    
-                    UIView.animateWithDuration(1.0) {
-                        self.view.layoutIfNeeded()
-                    }
+            closerBeacon = getCloserBeacon(beaconsFound)
+            
+            if canDestroyTower == false && closerBeacon!.proximity.rawValue == 1 {
+                canDestroyTower = true
+
+                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+
+                constraintNotification.constant = 0
+
+                UIView.animateWithDuration(1.0) {
+                    self.view.layoutIfNeeded()
+                }
+            } else if canDestroyTower == true && closerBeacon!.proximity.rawValue != 1 {
+                canDestroyTower = false
+
+                closerBeacon = nil
+
+                constraintNotification.constant = -60
+
+                UIView.animateWithDuration(1.0) {
+                    self.view.layoutIfNeeded()
                 }
             }
+            
+//            for beacon in beacons {
+//                
+//                if canDestroyTower == false && beacon.proximity.rawValue == 1 {
+//                
+//                    canDestroyTower = true
+//                    
+//                    AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+//                    
+//                    constraintNotification.constant = 0
+//                    
+//                    UIView.animateWithDuration(1.0) {
+//                        self.view.layoutIfNeeded()
+//                    }
+//                    
+////                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(2 * NSEC_PER_SEC)), dispatch_get_main_queue()) {
+////                        
+////                        self.constraintNotification.constant = -60
+////                        
+////                        UIView.animateWithDuration(1.0) {
+////                            self.view.layoutIfNeeded()
+////                        }
+////                    }
+//                    
+//                } else if canDestroyTower == true && beacon.proximity.rawValue != 1 {
+//                    canDestroyTower = false
+//                    
+//                    closerBeacon = nil
+//                    
+//                    constraintNotification.constant = -60
+//                    
+//                    UIView.animateWithDuration(1.0) {
+//                        self.view.layoutIfNeeded()
+//                    }
+//                }
+//            }
         }
     }
+    
+    
+    //MARK: motion gesture methods
+    
+    override func canBecomeFirstResponder() -> Bool {
+        return true
+    }
+    
+    override func motionBegan(motion: UIEventSubtype, withEvent event: UIEvent) {
+        println("Motion began")
+    }
+    
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent) {
+        if closerBeacon != nil {
+            closerBeacon!.life! -= 10
+            
+            // executa atualizacao do beacon no parse
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    func getCloserBeacon(beacons: [Beacon]) -> Beacon {
+        
+        var theCloserBeacon = Beacon()
+        var proximity = 4
+        
+        for beacon in beacons {
+            if beacon.proximity.rawValue < proximity && beacon.proximity.rawValue != 0 {
+                theCloserBeacon = beacon
+            }
+        }
+        
+        return theCloserBeacon
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 }

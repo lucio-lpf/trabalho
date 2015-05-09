@@ -24,20 +24,23 @@ class BeaconStorage {
         }
     }
     
-    func updateBeaconLifeWithId(id: NSString, newLife: NSInteger, blockSuccess: () -> Void, blockFailure: (NSError!) -> Void) {
+    func updateBeaconLifeWithMinor(minor: NSInteger, newLife: NSInteger, blockSuccess: () -> Void, blockFailure: (NSError!) -> Void) {
         
-        let object = PFObject(withoutDataWithClassName: "Tower", objectId: id as String)
+        getBeaconWithMinor(minor, blockSuccess: { (object) -> Void in
+            
+            object.setValue(newLife, forKey: "Life")
+            object.saveInBackground()
+            
+            blockSuccess()
+            
+        }) { (error) -> Void in
+            blockFailure(error)
+        }
+        
+        let object = PFObject(withoutDataWithClassName: "Tower", objectId: "7OGe3xS3oJ")
         object.setValue(newLife, forKey: "Life")
         
         object.save()
-//        getBeaconWithMinor(minor, blockSuccess: { (object) -> Void in
-//            
-//            object.setValue(newLife, forKey: "Life")
-//            object.save()
-//            
-//        }) { (error) -> Void in
-//            blockFailure(error)
-//        }
         
     }
     

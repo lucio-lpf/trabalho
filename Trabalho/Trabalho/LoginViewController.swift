@@ -24,6 +24,12 @@ class LoginViewController: UIViewController {
         navigationController!.navigationBar.shadowImage = UIImage()
         navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         
+//        BeaconStorage().updateBeaconLifeWithMinor(15, newLife: 0, blockSuccess: { () -> Void in
+//            
+//        }) { (error) -> Void in
+//            
+//        }
+        
     }
 
     @IBAction func loginButton(sender: AnyObject) {

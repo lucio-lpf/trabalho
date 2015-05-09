@@ -25,6 +25,8 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
     
     var canDestroyTower = false
     
+    var vida = 100
+    
     
     
     override func viewDidLoad() {
@@ -127,42 +129,6 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
                     self.view.layoutIfNeeded()
                 }
             }
-            
-//            for beacon in beacons {
-//                
-//                if canDestroyTower == false && beacon.proximity.rawValue == 1 {
-//                
-//                    canDestroyTower = true
-//                    
-//                    AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-//                    
-//                    constraintNotification.constant = 0
-//                    
-//                    UIView.animateWithDuration(1.0) {
-//                        self.view.layoutIfNeeded()
-//                    }
-//                    
-////                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(2 * NSEC_PER_SEC)), dispatch_get_main_queue()) {
-////                        
-////                        self.constraintNotification.constant = -60
-////                        
-////                        UIView.animateWithDuration(1.0) {
-////                            self.view.layoutIfNeeded()
-////                        }
-////                    }
-//                    
-//                } else if canDestroyTower == true && beacon.proximity.rawValue != 1 {
-//                    canDestroyTower = false
-//                    
-//                    closerBeacon = nil
-//                    
-//                    constraintNotification.constant = -60
-//                    
-//                    UIView.animateWithDuration(1.0) {
-//                        self.view.layoutIfNeeded()
-//                    }
-//                }
-//            }
         }
     }
     
@@ -179,13 +145,22 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
     
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent) {
         if canDestroyTower == true && closerBeacon != nil {
-            closerBeacon!.life! -= 10
             
-            BeaconStorage().updateBeaconLifeWithId(closerBeacon!.parseId, newLife: closerBeacon!.life, blockSuccess: { () -> Void in
-                println("Life updated")
-            }, blockFailure: { (error) -> Void in
-                println(error.description)
-            })
+//            closerBeacon!.life! -= 10
+//            
+//            BeaconStorage().updateBeaconLifeWithMinor( NSInteger(closerBeacon!.minor), newLife: closerBeacon!.life, blockSuccess: { () -> Void in
+//                
+//                }) { (error) -> Void in
+//                    
+//            }
+        }
+        
+        vida -= 10
+        
+        BeaconStorage().updateBeaconLifeWithMinor(15, newLife: vida, blockSuccess: { () -> Void in
+            
+        }) { (error) -> Void in
+            
         }
     }
     
@@ -205,6 +180,7 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
         for beacon in beacons {
             if beacon.proximity.rawValue < proximity && beacon.proximity.rawValue != 0 {
                 theCloserBeacon = beacon
+                proximity = theCloserBeacon.proximity.rawValue
             }
         }
         

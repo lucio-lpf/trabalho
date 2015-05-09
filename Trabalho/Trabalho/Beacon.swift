@@ -10,6 +10,7 @@ import CoreLocation
 
 class Beacon: CLBeacon {
     
+    var parseId: NSString!
     var life: NSInteger!
     
 }

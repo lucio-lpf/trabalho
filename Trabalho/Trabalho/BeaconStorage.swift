@@ -6,8 +6,6 @@
 //  Copyright (c) 2015 ThePhodas. All rights reserved.
 //
 
-import UIKit
-
 class BeaconStorage {
     
     func getBeaconWithMinor(minor: NSInteger, blockSuccess: (PFObject!) -> Void, blockFailure: (NSError!) -> Void) {
@@ -16,14 +14,31 @@ class BeaconStorage {
         
         query.whereKey("minor", equalTo: minor)
         
-        query.getFirstObjectInBackgroundWithBlock { (objects: PFObject?, error: NSError?) -> Void in
+        query.getFirstObjectInBackgroundWithBlock { (object: PFObject?, error: NSError?) -> Void in
             
             if error == nil {
-                blockSuccess(objects)
+                blockSuccess(object)
             } else {
                 blockFailure(error)
             }
         }
+    }
+    
+    func updateBeaconLifeWithId(id: NSString, newLife: NSInteger, blockSuccess: () -> Void, blockFailure: (NSError!) -> Void) {
+        
+        let object = PFObject(withoutDataWithClassName: "Tower", objectId: id as String)
+        object.setValue(newLife, forKey: "Life")
+        
+        object.save()
+//        getBeaconWithMinor(minor, blockSuccess: { (object) -> Void in
+//            
+//            object.setValue(newLife, forKey: "Life")
+//            object.save()
+//            
+//        }) { (error) -> Void in
+//            blockFailure(error)
+//        }
+        
     }
     
 }

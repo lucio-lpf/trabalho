@@ -6,8 +6,6 @@
 //  Copyright (c) 2015 ThePhodas. All rights reserved.
 //
 
-import UIKit
-
 class RegisterStorage {
     
     func signUpWithUser(user: PFUser, blockSuccess: () -> Void, blockFailure: (NSError) -> Void) {

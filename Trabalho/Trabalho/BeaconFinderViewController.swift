@@ -95,6 +95,19 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
             
             if canDestroyTower == false && closerBeacon!.proximity.rawValue == 1 {
                 canDestroyTower = true
+                
+                
+                BeaconStorage().getBeaconWithMinor(NSInteger(closerBeacon!.minor), blockSuccess: { (object) -> Void in
+                    
+                    self.closerBeacon!.parseId = object.valueForKey("id") as! NSString
+                    self.closerBeacon!.life = object.valueForKey("Life") as! NSInteger
+                    
+                }, blockFailure: { (error) -> Void in
+                    
+                    println(error.description)
+                    
+                })
+                
 
                 AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
 
@@ -165,10 +178,14 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent) {
-        if closerBeacon != nil {
+        if canDestroyTower == true && closerBeacon != nil {
             closerBeacon!.life! -= 10
             
-            // executa atualizacao do beacon no parse
+            BeaconStorage().updateBeaconLifeWithId(closerBeacon!.parseId, newLife: closerBeacon!.life, blockSuccess: { () -> Void in
+                println("Life updated")
+            }, blockFailure: { (error) -> Void in
+                println(error.description)
+            })
         }
     }
     

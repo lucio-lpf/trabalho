@@ -146,21 +146,13 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent) {
         if canDestroyTower == true && closerBeacon != nil {
             
-//            closerBeacon!.life! -= 10
-//            
-//            BeaconStorage().updateBeaconLifeWithMinor( NSInteger(closerBeacon!.minor), newLife: closerBeacon!.life, blockSuccess: { () -> Void in
-//                
-//                }) { (error) -> Void in
-//                    
-//            }
-        }
-        
-        vida -= 10
-        
-        BeaconStorage().updateBeaconLifeWithMinor(15, newLife: vida, blockSuccess: { () -> Void in
+            closerBeacon!.life! -= 10
             
-        }) { (error) -> Void in
-            
+            BeaconStorage().updateBeaconLifeWithId(closerBeacon!.parseId, newLife: closerBeacon!.life, blockSuccess: { () -> Void in
+                
+            }, blockFailure: { (error) -> Void in
+                
+            })
         }
     }
     

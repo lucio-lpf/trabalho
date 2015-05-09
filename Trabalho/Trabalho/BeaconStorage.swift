@@ -24,24 +24,29 @@ class BeaconStorage {
         }
     }
     
-    func updateBeaconLifeWithMinor(minor: NSInteger, newLife: NSInteger, blockSuccess: () -> Void, blockFailure: (NSError!) -> Void) {
+    func updateBeaconLifeWithId(id: NSString, newLife: NSInteger, blockSuccess: () -> Void, blockFailure: (NSError!) -> Void) {
         
-        getBeaconWithMinor(minor, blockSuccess: { (object) -> Void in
-            
+        if newLife < 0 {
+            let alert = UIAlertView(title: "Impossible!", message: "The tower had alredy been destroyed.", delegate: nil, cancelButtonTitle: "OK")
+            alert.show()
+        } else {
+            let object = PFObject(withoutDataWithClassName: "Tower", objectId: id as String)
             object.setValue(newLife, forKey: "Life")
+            
             object.saveInBackground()
             
-            blockSuccess()
-            
-        }) { (error) -> Void in
-            blockFailure(error)
+            if newLife == 0 {
+                
+                // atribuindo o id do last hit pro tower destroyer
+                let currentUser = PFUser.currentUser()
+                let nameDestroyer = currentUser!.valueForKey("id") as! NSString
+                object.setValue(nameDestroyer, forKey: "destroyer")
+                
+                // da parabens pro carinha que destuiu
+                let alert = UIAlertView(title: "Congratulations!!!", message: "You have been destroyed a tower.", delegate: nil, cancelButtonTitle: "Ok")
+                alert.show()
+            }
         }
-        
-        let object = PFObject(withoutDataWithClassName: "Tower", objectId: "7OGe3xS3oJ")
-        object.setValue(newLife, forKey: "Life")
-        
-        object.save()
-        
     }
-    
+
 }

@@ -108,7 +108,6 @@
 		5AFEDBCC1AFA9882004D9990 = {
 			isa = PBXGroup;
 			children = (
-				5AD191C71AFD41C500A9B75C /* PushKit.framework */,
 				5AFEDC1F1AFAA5B7004D9990 /* frameworks */,
 				5AFEDBD71AFA9882004D9990 /* Trabalho */,
 				5AFEDBF01AFA9882004D9990 /* TrabalhoTests */,
@@ -166,6 +165,7 @@
 		5AFEDC1F1AFAA5B7004D9990 /* frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5AD191C71AFD41C500A9B75C /* PushKit.framework */,
 				5AFEDC1B1AFA9D73004D9990 /* CoreGraphics.framework */,
 				5AFEDC191AFA9D67004D9990 /* MobileCoreServices.framework */,
 				5AFEDC171AFA9D5F004D9990 /* QuartzCore.framework */,

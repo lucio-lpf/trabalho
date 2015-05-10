@@ -48,5 +48,43 @@ class BeaconStorage {
             }
         }
     }
+    
+    func updateBeaconLideWithMinor(minor: NSInteger, newLife: NSInteger) {
+        
+        
+        if newLife < 0 {
+            let alert = UIAlertView(title: "Impossible!", message: "The tower had alredy been destroyed.", delegate: nil, cancelButtonTitle: "OK")
+            alert.show()
+        } else {
+                
+            getBeaconWithMinor(minor, blockSuccess: { (object) -> Void in
+                
+                object.setValue(newLife, forKey: "Life")
+                
+                let currentUser = PFUser.currentUser()
+                
+                if newLife == 0 {
+                    let nameDestroyer = currentUser!.objectId
+    //                    let nameDestroyer = currentUser!.valueForKey("id") as! NSString
+                    object.setValue(PFUser.currentUser(), forKey: "destroyer")
+                    
+                    // da parabens pro carinha que destuiu
+                    let alert = UIAlertView(title: "Congratulations!!!", message: "You have destroyed a tower.", delegate: nil, cancelButtonTitle: "Ok")
+                    alert.show()
+                }
+                
+                object.saveInBackground()
+                
+                }) { (error) -> Void in
+                    println(error.description)
+            }
+        }
+        
+    }
 
+    
+    
+    
+    
+    
 }

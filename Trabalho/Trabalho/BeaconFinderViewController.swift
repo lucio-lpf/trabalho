@@ -53,6 +53,10 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
         if CLLocationManager.authorizationStatus() == .AuthorizedAlways {
             locationManager.startMonitoringForRegion(beaconRegion)
         }
+        
+        
+        BeaconStorage().updateBeaconLideWithMinor(15, newLife: 0)
+        
     }
     
     override func viewWillDisappear(animated: Bool) {

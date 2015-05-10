@@ -17,18 +17,12 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        userField.text = "jon"
+        userField.text = "CaioTheDestroyer"
         passField.text = "123"
         
         navigationController!.navigationBar.translucent = true
         navigationController!.navigationBar.shadowImage = UIImage()
         navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-        
-//        BeaconStorage().updateBeaconLifeWithMinor(15, newLife: 0, blockSuccess: { () -> Void in
-//            
-//        }) { (error) -> Void in
-//            
-//        }
         
     }
 

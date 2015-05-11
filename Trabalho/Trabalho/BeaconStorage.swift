@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 ThePhodas. All rights reserved.
 //
 
+import CoreLocation
+
 class BeaconStorage {
     
     func getBeaconWithMinor(minor: NSInteger, blockSuccess: (PFObject!) -> Void, blockFailure: (NSError!) -> Void) {

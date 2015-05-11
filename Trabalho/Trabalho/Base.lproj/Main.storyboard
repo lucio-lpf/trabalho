@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="V7w-6K-cST">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="V7w-6K-cST">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -105,10 +105,10 @@
             </objects>
             <point key="canvasLocation" x="1056.5" y="223.5"/>
         </scene>
-        <!--Beacon Finder View Controller-->
+        <!--View Controller-->
         <scene sceneID="Ior-4m-l6J">
             <objects>
-                <viewController id="Ajf-GU-fyY" customClass="BeaconFinderViewController" customModule="Trabalho" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ajf-GU-fyY" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tum-5h-pdJ"/>
                         <viewControllerLayoutGuide type="bottom" id="c0c-nJ-cns"/>
@@ -120,23 +120,6 @@
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="Wall" translatesAutoresizingMaskIntoConstraints="NO" id="OOt-x4-NKR">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ABg-94-F3c">
-                                <rect key="frame" x="0.0" y="-60" width="375" height="60"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destroy the tower!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3H-H1-cDu">
-                                        <rect key="frame" x="107" y="18" width="161" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.39958175505050508" green="0.39958175505050508" blue="0.39958175505050508" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="Mgo-fz-MSW"/>
-                                    <constraint firstAttribute="centerX" secondItem="N3H-H1-cDu" secondAttribute="centerX" id="g7N-D2-Bhr"/>
-                                    <constraint firstAttribute="centerY" secondItem="N3H-H1-cDu" secondAttribute="centerY" id="odc-xq-2fV"/>
-                                </constraints>
-                            </view>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="Are you ready?" translatesAutoresizingMaskIntoConstraints="NO" id="JPm-LX-zXp">
                                 <rect key="frame" x="74" y="86" width="228" height="189"/>
                                 <constraints>
@@ -186,31 +169,25 @@
                             <constraint firstItem="yMd-Dl-SbB" firstAttribute="top" secondItem="JPm-LX-zXp" secondAttribute="bottom" constant="53" id="Esa-kA-tXO"/>
                             <constraint firstItem="JPm-LX-zXp" firstAttribute="top" secondItem="tum-5h-pdJ" secondAttribute="bottom" constant="66" id="Lhl-lk-lJC"/>
                             <constraint firstAttribute="centerX" secondItem="JPm-LX-zXp" secondAttribute="centerX" id="NNz-Gq-Zng"/>
-                            <constraint firstItem="ABg-94-F3c" firstAttribute="top" secondItem="avZ-LN-842" secondAttribute="topMargin" constant="-60" id="Pun-sK-JY3"/>
                             <constraint firstItem="OOt-x4-NKR" firstAttribute="top" secondItem="avZ-LN-842" secondAttribute="top" id="Yar-i2-fQm"/>
-                            <constraint firstAttribute="centerX" secondItem="ABg-94-F3c" secondAttribute="centerX" id="b15-b5-K9r"/>
                             <constraint firstAttribute="bottom" secondItem="OOt-x4-NKR" secondAttribute="bottom" id="cfn-gr-hi0"/>
                             <constraint firstItem="VQ2-SK-8MZ" firstAttribute="top" secondItem="yMd-Dl-SbB" secondAttribute="bottom" constant="57" id="gjV-GK-9Vj"/>
                             <constraint firstAttribute="centerX" secondItem="2ov-3c-fPa" secondAttribute="centerX" id="iyZ-KK-SII"/>
-                            <constraint firstAttribute="width" secondItem="ABg-94-F3c" secondAttribute="width" id="qs2-7d-oc2"/>
                             <constraint firstAttribute="trailing" secondItem="OOt-x4-NKR" secondAttribute="trailing" id="uHj-iY-hCV"/>
                             <constraint firstItem="OOt-x4-NKR" firstAttribute="leading" secondItem="avZ-LN-842" secondAttribute="leading" id="wWd-uM-bdj"/>
                         </constraints>
                     </view>
                     <value key="contentSizeForViewInPopover" type="size" width="375" height="667"/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <connections>
-                        <outlet property="constraintNotification" destination="Pun-sK-JY3" id="6Ge-9P-Qmx"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eBI-1g-Sk2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1920.5" y="718.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Beacon Finder View Controller-->
         <scene sceneID="XGB-ev-6H0">
             <objects>
-                <viewController id="vyn-vK-YZP" sceneMemberID="viewController">
+                <viewController id="vyn-vK-YZP" customClass="BeaconFinderViewController" customModule="Trabalho" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9R2-ik-VhI"/>
                         <viewControllerLayoutGuide type="bottom" id="2Ea-d0-UvK"/>
@@ -232,20 +209,43 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRD-X9-IaE">
+                                <rect key="frame" x="0.0" y="-60" width="375" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destroy the tower!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ns-nA-lDE">
+                                        <rect key="frame" x="107" y="18" width="161" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.39958175509999999" green="0.39958175509999999" blue="0.39958175509999999" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="3ns-nA-lDE" secondAttribute="centerY" id="NRs-qq-VQ3"/>
+                                    <constraint firstAttribute="height" constant="60" id="rFs-NA-f0O"/>
+                                    <constraint firstAttribute="centerX" secondItem="3ns-nA-lDE" secondAttribute="centerX" id="zRq-ui-hRj"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="fRD-X9-IaE" secondAttribute="centerX" id="1FU-DZ-voI"/>
                             <constraint firstAttribute="centerX" secondItem="kaw-wV-S1I" secondAttribute="centerX" id="8EL-T2-R7m"/>
+                            <constraint firstItem="fRD-X9-IaE" firstAttribute="top" secondItem="n2N-us-zgA" secondAttribute="top" constant="-60" id="B5g-hQ-sob"/>
                             <constraint firstItem="2Ea-d0-UvK" firstAttribute="top" secondItem="2Id-CA-mYz" secondAttribute="bottom" id="FW1-ST-2wm"/>
                             <constraint firstItem="2Id-CA-mYz" firstAttribute="leading" secondItem="n2N-us-zgA" secondAttribute="leading" id="K2Y-7j-bam"/>
                             <constraint firstAttribute="trailing" secondItem="2Id-CA-mYz" secondAttribute="trailing" id="VL1-xN-KT4"/>
                             <constraint firstItem="2Id-CA-mYz" firstAttribute="top" secondItem="9R2-ik-VhI" secondAttribute="bottom" constant="-20" id="goo-P3-PDf"/>
+                            <constraint firstItem="fRD-X9-IaE" firstAttribute="width" secondItem="2Id-CA-mYz" secondAttribute="width" id="kEs-2h-fBQ"/>
                             <constraint firstItem="2Ea-d0-UvK" firstAttribute="top" secondItem="kaw-wV-S1I" secondAttribute="bottom" constant="36" id="ubr-NB-Fbt"/>
                         </constraints>
                     </view>
                     <value key="contentSizeForViewInPopover" type="size" width="375" height="667"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="constraintNotification" destination="B5g-hQ-sob" id="8dF-Hi-7Il"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jlh-Kh-VkG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

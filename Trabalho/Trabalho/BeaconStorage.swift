@@ -33,19 +33,21 @@ class BeaconStorage {
             let object = PFObject(withoutDataWithClassName: "Tower", objectId: id as String)
             object.setValue(newLife, forKey: "Life")
             
-            object.saveInBackground()
+            
             
             if newLife == 0 {
                 
                 // atribuindo o id do last hit pro tower destroyer
                 let currentUser = PFUser.currentUser()
-                let nameDestroyer = currentUser!.valueForKey("id") as! NSString
-                object.setValue(nameDestroyer, forKey: "destroyer")
+//                let idDestroyer = currentUser!.valueForKey("objectId") as! NSString
+                object.setValue(currentUser!, forKey: "destroyer")
                 
                 // da parabens pro carinha que destuiu
-                let alert = UIAlertView(title: "Congratulations!!!", message: "You have been destroyed a tower.", delegate: nil, cancelButtonTitle: "Ok")
+                let alert = UIAlertView(title: "Congratulations!!!", message: "You destroyed a tower.", delegate: nil, cancelButtonTitle: "Ok")
                 alert.show()
             }
+            
+            object.saveInBackground()
         }
     }
     
@@ -60,12 +62,9 @@ class BeaconStorage {
             getBeaconWithMinor(minor, blockSuccess: { (object) -> Void in
                 
                 object.setValue(newLife, forKey: "Life")
-                
-                let currentUser = PFUser.currentUser()
+                object.setValue(PFUser.currentUser()!, forKey: "destroyer")
                 
                 if newLife == 0 {
-                    let nameDestroyer = currentUser!.objectId
-    //                    let nameDestroyer = currentUser!.valueForKey("id") as! NSString
                     object.setValue(PFUser.currentUser(), forKey: "destroyer")
                     
                     // da parabens pro carinha que destuiu

@@ -8,9 +8,12 @@
 
 import CoreLocation
 
-class Beacon: CLBeacon {
+@objc(Beacon)
+
+class Beacon {
     
     var parseId: NSString!
     var life: NSInteger!
     
+    var beacon: CLBeacon!
 }

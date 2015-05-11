@@ -17,11 +17,11 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var constraintNotification: NSLayoutConstraint!
     
-    var beaconsFound: [Beacon] = [Beacon]()
+    var beaconsFound: [CLBeacon] = [CLBeacon]()
     let locationManager = CLLocationManager()
     var beaconRegion = CLBeaconRegion(proximityUUID: uuid, identifier: identifier)
     
-    var closerBeacon: Beacon?
+    var closerBeacon = Beacon()
     
     var canDestroyTower = false
     
@@ -32,14 +32,14 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        BeaconStorage().getBeaconWithMinor(16, blockSuccess: { (object) -> Void in
-            let beaconLife = object.objectForKey("Life") as! NSInteger
-            
-            println("Beacon encontrado.")
-            println("Vida do beacon: \(beaconLife)")
-        }) { (error) -> Void in
-            println("Beacon nao encontrado")
-        }
+//        BeaconStorage().getBeaconWithMinor(16, blockSuccess: { (object) -> Void in
+//            let beaconLife = object.objectForKey("Life") as! NSInteger
+//            
+//            println("Beacon encontrado.")
+//            println("Vida do beacon: \(beaconLife)")
+//        }) { (error) -> Void in
+//            println("Beacon nao encontrado")
+//        }
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -55,7 +55,7 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
         }
         
         
-        BeaconStorage().updateBeaconLideWithMinor(15, newLife: 0)
+//        BeaconStorage().updateBeaconLideWithMinor(15, newLife: 0)
         
     }
     
@@ -95,37 +95,34 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager!, didRangeBeacons beacons: [AnyObject]!, inRegion region: CLBeaconRegion!) {
         
         if (beacons.count > 0) {
-            beaconsFound = beacons as! [Beacon]
+            beaconsFound = beacons as! [CLBeacon]
             
-            closerBeacon = getCloserBeacon(beaconsFound)
+            closerBeacon.beacon = beaconsFound[0]
             
-            if canDestroyTower == false && closerBeacon!.proximity.rawValue == 1 {
+            if canDestroyTower == false && closerBeacon.beacon.proximity.rawValue == 1 {
                 canDestroyTower = true
                 
-                
-                BeaconStorage().getBeaconWithMinor(NSInteger(closerBeacon!.minor), blockSuccess: { (object) -> Void in
+                BeaconStorage().getBeaconWithMinor(NSInteger(closerBeacon.beacon.minor), blockSuccess: { (object) -> Void in
                     
-                    self.closerBeacon!.parseId = object.valueForKey("id") as! NSString
-                    self.closerBeacon!.life = object.valueForKey("Life") as! NSInteger
+                    self.closerBeacon.parseId = object.valueForKey("objectId") as! NSString
+                    self.closerBeacon.life = object.valueForKey("Life") as! NSInteger
                     
                 }, blockFailure: { (error) -> Void in
                     
                     println(error.description)
                     
                 })
-                
-
-                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+//
+//                
+//                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
 
                 constraintNotification.constant = 0
 
                 UIView.animateWithDuration(1.0) {
                     self.view.layoutIfNeeded()
                 }
-            } else if canDestroyTower == true && closerBeacon!.proximity.rawValue != 1 {
+            } else if canDestroyTower == true && closerBeacon.beacon.proximity.rawValue != 1 {
                 canDestroyTower = false
-
-                closerBeacon = nil
 
                 constraintNotification.constant = -60
 
@@ -148,77 +145,22 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent) {
-        if canDestroyTower == true && closerBeacon != nil {
+        if canDestroyTower == true {
             
-            closerBeacon!.life! -= 10
+            closerBeacon.life! -= 10
             
-            BeaconStorage().updateBeaconLifeWithId(closerBeacon!.parseId, newLife: closerBeacon!.life, blockSuccess: { () -> Void in
+//            BeaconStorage().update
+            
+            BeaconStorage().updateBeaconLifeWithId(closerBeacon.parseId, newLife: closerBeacon.life, blockSuccess: { () -> Void in
+                
+                println("Success")
+                
+                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
                 
             }, blockFailure: { (error) -> Void in
-                
+                println(error.description)
             })
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    func getCloserBeacon(beacons: [Beacon]) -> Beacon {
-        
-        var theCloserBeacon = Beacon()
-        var proximity = 4
-        
-        for beacon in beacons {
-            if beacon.proximity.rawValue < proximity && beacon.proximity.rawValue != 0 {
-                theCloserBeacon = beacon
-                proximity = theCloserBeacon.proximity.rawValue
-            }
-        }
-        
-        return theCloserBeacon
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
 }

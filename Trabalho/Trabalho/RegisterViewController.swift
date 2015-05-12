@@ -10,8 +10,33 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     
+    @IBOutlet weak var topConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var signUpConstraint: NSLayoutConstraint!
     @IBOutlet weak var userField: UITextField!
     @IBOutlet weak var emailField: UITextField!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self);
+    }
+    
+    
+    func keyboardWillShow(notification: NSNotification) {
+        var info = notification.userInfo!
+        var keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+        self.signUpConstraint.constant = keyboardFrame.size.height + 20
+        self.bottomConstraint.constant = 10
+        self.topConstraint.constant = -20
+        UIView.animateWithDuration(1.0, animations: { () -> Void in
+            self.view.layoutIfNeeded()
+        })
+    }
     
     @IBAction func registerButton(sender: AnyObject) {
         
@@ -43,4 +68,7 @@ class RegisterViewController: UIViewController {
         }
     }
     
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        self.view.endEditing(true)
+    }
 }

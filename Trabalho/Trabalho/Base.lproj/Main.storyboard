@@ -97,7 +97,10 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="bottomConstraint" destination="luz-he-8Gv" id="gN3-LO-hFc"/>
+                        <outlet property="loginConstraint" destination="fhJ-Af-lg9" id="3U9-r4-LGy"/>
                         <outlet property="passField" destination="zIk-c9-3df" id="Qkw-2i-19V"/>
+                        <outlet property="topConstraint" destination="UTZ-qg-vuV" id="2t1-ps-RUi"/>
                         <outlet property="userField" destination="X2E-bt-aAI" id="B1r-eS-4PJ"/>
                         <segue destination="Ajf-GU-fyY" kind="show" identifier="loginOk" id="Lgt-AA-YHz"/>
                     </connections>
@@ -302,7 +305,7 @@
                         <viewControllerLayoutGuide type="top" id="7SL-JN-Qf4"/>
                         <viewControllerLayoutGuide type="bottom" id="UHF-Yt-1A9"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="YjP-c5-7Ml">
+                    <view key="view" contentMode="scaleToFill" id="YjP-c5-7Ml" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -368,7 +371,10 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="bottomConstraint" destination="380-OL-ano" id="wJx-Kp-WPk"/>
                         <outlet property="emailField" destination="ddN-9K-6eY" id="haw-of-3Mg"/>
+                        <outlet property="signUpConstraint" destination="jrH-tD-7hY" id="YMj-jE-3tm"/>
+                        <outlet property="topConstraint" destination="XBk-Ux-NFc" id="J7c-jt-fM2"/>
                         <outlet property="userField" destination="AYS-rt-gdG" id="TTy-Ei-ZP4"/>
                         <segue destination="2vQ-hI-s1J" kind="unwind" identifier="backToMaster" unwindAction="unwind:" id="xpg-zI-Rcv"/>
                         <segue destination="Ajf-GU-fyY" kind="show" identifier="registerOk" id="l4g-h3-y9K"/>

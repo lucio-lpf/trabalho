@@ -10,6 +10,9 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var topConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var loginConstraint: NSLayoutConstraint!
     @IBOutlet weak var userField: UITextField!
     
     @IBOutlet weak var passField: UITextField!
@@ -41,9 +44,9 @@ class LoginViewController: UIViewController {
         }
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        self.view.endEditing(true)
-    }
+//    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+//        self.view.endEditing(true)
+//    }
 
     @IBAction func unwind(segue: UIStoryboardSegue) {}
     

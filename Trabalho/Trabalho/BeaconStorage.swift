@@ -7,6 +7,7 @@
 //
 
 import CoreLocation
+import MapKit
 
 class BeaconStorage {
     
@@ -26,7 +27,7 @@ class BeaconStorage {
         }
     }
     
-    func updateBeaconLifeWithId(id: NSString, newLife: NSInteger, blockSuccess: () -> Void, blockFailure: (NSError!) -> Void) {
+    func updateBeaconLifeWithId(id: NSString, newLife: NSInteger, userLocation: CLLocation, blockSuccess: () -> Void, blockFailure: (NSError!) -> Void) {
         
         if newLife < 0 {
             let alert = UIAlertView(title: "Impossible!", message: "The tower had alredy been destroyed.", delegate: nil, cancelButtonTitle: "OK")
@@ -35,7 +36,9 @@ class BeaconStorage {
             let object = PFObject(withoutDataWithClassName: "Tower", objectId: id as String)
             object.setValue(newLife, forKey: "Life")
             
+            var location = PFGeoPoint(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
             
+            object.setValue(location, forKey: "location")
             
             if newLife == 0 {
                 

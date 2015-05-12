@@ -29,6 +29,8 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
     
     var canDestroyTower = false
     
+    var userLocation: CLLocation!
+    
     var vida = 100
     
     func animation () {
@@ -38,6 +40,8 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationManager.startUpdatingLocation()
         
 //        BeaconStorage().getBeaconWithMinor(16, blockSuccess: { (object) -> Void in
 //            let beaconLife = object.objectForKey("Life") as! NSInteger
@@ -162,7 +166,7 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
             
 //            BeaconStorage().update
             
-            BeaconStorage().updateBeaconLifeWithId(closerBeacon.parseId, newLife: closerBeacon.life, blockSuccess: { () -> Void in
+            BeaconStorage().updateBeaconLifeWithId(closerBeacon.parseId, newLife: closerBeacon.life, userLocation: locationManager.location, blockSuccess: { () -> Void in
                 
                 println("Success")
                 

@@ -16,6 +16,10 @@ let identifier = "beacon.identifier"
 class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var constraintNotification: NSLayoutConstraint!
+    @IBOutlet weak var frameFim: UIView!
+    @IBOutlet weak var frameInicio: UIView!
+    @IBOutlet weak var weaponImage: UIImageView!
+    @IBOutlet weak var text: UIImageView!
     
     var beaconsFound: [CLBeacon] = [CLBeacon]()
     let locationManager = CLLocationManager()
@@ -29,7 +33,10 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
     
     var vida = 100
     
-    
+    func animation () {
+        
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

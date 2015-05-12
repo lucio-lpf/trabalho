@@ -297,6 +297,73 @@
             </objects>
             <point key="canvasLocation" x="2521.5" y="718.5"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="A3i-bB-YtW">
+            <objects>
+                <viewController id="qG0-he-hW1" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sNI-aQ-XBs"/>
+                        <viewControllerLayoutGuide type="bottom" id="HlU-98-sze"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LdY-cs-XXc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="wood" translatesAutoresizingMaskIntoConstraints="NO" id="NOw-iE-NPH">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQD-U2-dge">
+                                <rect key="frame" x="26" y="171" width="323" height="109"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="eQD-U2-dge" secondAttribute="height" multiplier="363:122" id="iqM-Ah-6Tx"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="Pick buy Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJN-Mu-78r">
+                                <rect key="frame" x="26" y="330" width="323" height="108"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="kJN-Mu-78r" secondAttribute="height" multiplier="363:122" id="MKP-iF-UeB"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="Catapult Buy Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQQ-Pj-fqh">
+                                <rect key="frame" x="26" y="488" width="323" height="109"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="YQQ-Pj-fqh" secondAttribute="height" multiplier="363:122" id="czq-nu-kNF"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="Trebuchet Buy Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NOw-iE-NPH" firstAttribute="leading" secondItem="LdY-cs-XXc" secondAttribute="leading" id="AdV-vE-Rqg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YQQ-Pj-fqh" secondAttribute="trailing" constant="10" id="HDq-P7-rvS"/>
+                            <constraint firstItem="kJN-Mu-78r" firstAttribute="top" secondItem="eQD-U2-dge" secondAttribute="bottom" constant="50" id="Ihs-v0-KsD"/>
+                            <constraint firstItem="eQD-U2-dge" firstAttribute="leading" secondItem="LdY-cs-XXc" secondAttribute="leadingMargin" constant="10" id="Pvu-wl-R1L"/>
+                            <constraint firstItem="YQQ-Pj-fqh" firstAttribute="leading" secondItem="LdY-cs-XXc" secondAttribute="leadingMargin" constant="10" id="UCp-co-j0G"/>
+                            <constraint firstItem="kJN-Mu-78r" firstAttribute="leading" secondItem="LdY-cs-XXc" secondAttribute="leadingMargin" constant="10" id="Vnn-j9-MMF"/>
+                            <constraint firstAttribute="bottom" secondItem="NOw-iE-NPH" secondAttribute="bottom" id="YLj-an-J2b"/>
+                            <constraint firstAttribute="trailing" secondItem="NOw-iE-NPH" secondAttribute="trailing" id="dDT-zX-D5X"/>
+                            <constraint firstItem="HlU-98-sze" firstAttribute="top" secondItem="YQQ-Pj-fqh" secondAttribute="bottom" constant="70" id="dhS-Dw-CHT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eQD-U2-dge" secondAttribute="trailing" constant="10" id="jWr-9n-1Wh"/>
+                            <constraint firstItem="YQQ-Pj-fqh" firstAttribute="top" secondItem="kJN-Mu-78r" secondAttribute="bottom" constant="50" id="mcH-am-NY3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kJN-Mu-78r" secondAttribute="trailing" constant="10" id="qOX-1z-s34"/>
+                            <constraint firstItem="NOw-iE-NPH" firstAttribute="top" secondItem="LdY-cs-XXc" secondAttribute="top" id="zA3-62-8A9"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oLf-aC-2n5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3057.5" y="725.5"/>
+        </scene>
         <!--Register View Controller-->
         <scene sceneID="edQ-8y-hly">
             <objects>
@@ -406,7 +473,10 @@
     </scenes>
     <resources>
         <image name="Are you ready?" width="411" height="342"/>
+        <image name="Catapult Buy Button" width="645" height="237"/>
         <image name="Find and destroy the" width="603" height="119"/>
+        <image name="Pick buy Button" width="645" height="237"/>
+        <image name="Trebuchet Buy Button" width="645" height="237"/>
         <image name="Wall" width="750" height="1334"/>
         <image name="background" width="750" height="1334"/>
         <image name="far" width="750" height="221"/>
@@ -417,6 +487,7 @@
         <image name="start button" width="477" height="164"/>
         <image name="title" width="538" height="466"/>
         <image name="weapons" width="477" height="151"/>
+        <image name="wood" width="750" height="1334"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="l4g-h3-y9K"/>

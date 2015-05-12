@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="V7w-6K-cST">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="V7w-6K-cST">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -238,11 +238,11 @@
                                     <constraint firstAttribute="height" constant="350" id="V2Z-9K-VfB"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RBU-8t-BQs">
-                                <rect key="frame" x="87" y="150" width="200" height="200"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pick" translatesAutoresizingMaskIntoConstraints="NO" id="RBU-8t-BQs">
+                                <rect key="frame" x="65" y="127" width="246" height="246"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="gf0-TB-hsd"/>
-                                    <constraint firstAttribute="width" constant="200" id="iP1-o8-9Yi"/>
+                                    <constraint firstAttribute="height" constant="246" id="gf0-TB-hsd"/>
+                                    <constraint firstAttribute="width" constant="246" id="iP1-o8-9Yi"/>
                                 </constraints>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="far" translatesAutoresizingMaskIntoConstraints="NO" id="Uua-P6-48C">
@@ -262,9 +262,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="RBU-8t-BQs" firstAttribute="top" secondItem="9R2-ik-VhI" secondAttribute="bottom" constant="130" id="0Uu-5d-Mal"/>
+                            <constraint firstItem="RBU-8t-BQs" firstAttribute="top" secondItem="9R2-ik-VhI" secondAttribute="bottom" constant="107" id="0Uu-5d-Mal"/>
                             <constraint firstAttribute="centerX" secondItem="fRD-X9-IaE" secondAttribute="centerX" id="1FU-DZ-voI"/>
-                            <constraint firstItem="Se5-5u-BwQ" firstAttribute="centerX" secondItem="RBU-8t-BQs" secondAttribute="centerX" id="1LH-FU-jaF"/>
+                            <constraint firstItem="Se5-5u-BwQ" firstAttribute="centerX" secondItem="RBU-8t-BQs" secondAttribute="centerX" constant="-1" id="1LH-FU-jaF"/>
                             <constraint firstAttribute="centerX" secondItem="kaw-wV-S1I" secondAttribute="centerX" id="8EL-T2-R7m"/>
                             <constraint firstItem="fRD-X9-IaE" firstAttribute="top" secondItem="n2N-us-zgA" secondAttribute="top" constant="-60" id="B5g-hQ-sob"/>
                             <constraint firstItem="2Ea-d0-UvK" firstAttribute="top" secondItem="2Id-CA-mYz" secondAttribute="bottom" id="FW1-ST-2wm"/>
@@ -277,7 +277,7 @@
                             <constraint firstItem="2Id-CA-mYz" firstAttribute="top" secondItem="9R2-ik-VhI" secondAttribute="bottom" constant="-20" id="goo-P3-PDf"/>
                             <constraint firstItem="fRD-X9-IaE" firstAttribute="width" secondItem="2Id-CA-mYz" secondAttribute="width" id="kEs-2h-fBQ"/>
                             <constraint firstItem="Se5-5u-BwQ" firstAttribute="centerY" secondItem="RBU-8t-BQs" secondAttribute="centerY" id="pqd-Fz-xX5"/>
-                            <constraint firstItem="OCj-kL-WAu" firstAttribute="centerX" secondItem="RBU-8t-BQs" secondAttribute="centerX" constant="0.5" id="swb-Ra-djE"/>
+                            <constraint firstItem="OCj-kL-WAu" firstAttribute="centerX" secondItem="RBU-8t-BQs" secondAttribute="centerX" constant="-0.5" id="swb-Ra-djE"/>
                             <constraint firstItem="2Ea-d0-UvK" firstAttribute="top" secondItem="kaw-wV-S1I" secondAttribute="bottom" constant="36" id="ubr-NB-Fbt"/>
                             <constraint firstItem="kaw-wV-S1I" firstAttribute="top" secondItem="Uua-P6-48C" secondAttribute="bottom" constant="10" id="wyO-4L-Tgy"/>
                         </constraints>
@@ -299,40 +299,72 @@
             </objects>
             <point key="canvasLocation" x="2521.5" y="718.5"/>
         </scene>
-        <!--Map View Controller-->
-        <scene sceneID="4JD-2f-EvL">
+        <!--View Controller-->
+        <scene sceneID="A3i-bB-YtW">
             <objects>
-                <viewController id="Ovc-pG-UIP" customClass="MapViewController" customModule="Trabalho" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qG0-he-hW1" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="SI8-JV-vlo"/>
-                        <viewControllerLayoutGuide type="bottom" id="MIy-iT-md2"/>
+                        <viewControllerLayoutGuide type="top" id="sNI-aQ-XBs"/>
+                        <viewControllerLayoutGuide type="bottom" id="HlU-98-sze"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="J80-CE-roZ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <view key="view" contentMode="scaleToFill" id="LdY-cs-XXc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7gV-ZW-Hae">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <connections>
-                                    <outlet property="delegate" destination="Ovc-pG-UIP" id="iJa-I7-Yy9"/>
-                                </connections>
-                            </mapView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="wood" translatesAutoresizingMaskIntoConstraints="NO" id="NOw-iE-NPH">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQD-U2-dge">
+                                <rect key="frame" x="26" y="171" width="323" height="109"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="eQD-U2-dge" secondAttribute="height" multiplier="363:122" id="iqM-Ah-6Tx"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="Pick buy Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJN-Mu-78r">
+                                <rect key="frame" x="26" y="330" width="323" height="108"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="kJN-Mu-78r" secondAttribute="height" multiplier="363:122" id="MKP-iF-UeB"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="Catapult Buy Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQQ-Pj-fqh">
+                                <rect key="frame" x="26" y="488" width="323" height="109"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="YQQ-Pj-fqh" secondAttribute="height" multiplier="363:122" id="czq-nu-kNF"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="Trebuchet Buy Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="7gV-ZW-Hae" firstAttribute="leading" secondItem="J80-CE-roZ" secondAttribute="leading" id="2nh-5a-pfS"/>
-                            <constraint firstItem="MIy-iT-md2" firstAttribute="top" secondItem="7gV-ZW-Hae" secondAttribute="bottom" id="9qe-Mw-IeQ"/>
-                            <constraint firstItem="7gV-ZW-Hae" firstAttribute="top" secondItem="J80-CE-roZ" secondAttribute="top" id="Fkz-e9-EXg"/>
-                            <constraint firstAttribute="trailing" secondItem="7gV-ZW-Hae" secondAttribute="trailing" id="ZDp-cv-P2b"/>
+                            <constraint firstItem="NOw-iE-NPH" firstAttribute="leading" secondItem="LdY-cs-XXc" secondAttribute="leading" id="AdV-vE-Rqg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YQQ-Pj-fqh" secondAttribute="trailing" constant="10" id="HDq-P7-rvS"/>
+                            <constraint firstItem="kJN-Mu-78r" firstAttribute="top" secondItem="eQD-U2-dge" secondAttribute="bottom" constant="50" id="Ihs-v0-KsD"/>
+                            <constraint firstItem="eQD-U2-dge" firstAttribute="leading" secondItem="LdY-cs-XXc" secondAttribute="leadingMargin" constant="10" id="Pvu-wl-R1L"/>
+                            <constraint firstItem="YQQ-Pj-fqh" firstAttribute="leading" secondItem="LdY-cs-XXc" secondAttribute="leadingMargin" constant="10" id="UCp-co-j0G"/>
+                            <constraint firstItem="kJN-Mu-78r" firstAttribute="leading" secondItem="LdY-cs-XXc" secondAttribute="leadingMargin" constant="10" id="Vnn-j9-MMF"/>
+                            <constraint firstAttribute="bottom" secondItem="NOw-iE-NPH" secondAttribute="bottom" id="YLj-an-J2b"/>
+                            <constraint firstAttribute="trailing" secondItem="NOw-iE-NPH" secondAttribute="trailing" id="dDT-zX-D5X"/>
+                            <constraint firstItem="HlU-98-sze" firstAttribute="top" secondItem="YQQ-Pj-fqh" secondAttribute="bottom" constant="70" id="dhS-Dw-CHT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eQD-U2-dge" secondAttribute="trailing" constant="10" id="jWr-9n-1Wh"/>
+                            <constraint firstItem="YQQ-Pj-fqh" firstAttribute="top" secondItem="kJN-Mu-78r" secondAttribute="bottom" constant="50" id="mcH-am-NY3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kJN-Mu-78r" secondAttribute="trailing" constant="10" id="qOX-1z-s34"/>
+                            <constraint firstItem="NOw-iE-NPH" firstAttribute="top" secondItem="LdY-cs-XXc" secondAttribute="top" id="zA3-62-8A9"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="mapVIew" destination="7gV-ZW-Hae" id="han-yw-y48"/>
-                    </connections>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0Ga-JY-Ja2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oLf-aC-2n5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3149" y="719"/>
+            <point key="canvasLocation" x="3057.5" y="725.5"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="edQ-8y-hly">
@@ -443,17 +475,22 @@
     </scenes>
     <resources>
         <image name="Are you ready?" width="411" height="342"/>
+        <image name="Catapult Buy Button" width="645" height="237"/>
         <image name="Find and destroy the" width="603" height="119"/>
+        <image name="Pick buy Button" width="645" height="237"/>
+        <image name="Trebuchet Buy Button" width="645" height="237"/>
         <image name="Wall" width="750" height="1334"/>
         <image name="background" width="750" height="1334"/>
         <image name="far" width="750" height="221"/>
         <image name="logout" width="208" height="90"/>
+        <image name="pick" width="352" height="352"/>
         <image name="play button" width="1431" height="492"/>
         <image name="sign up" width="234" height="100"/>
         <image name="sign up button " width="477" height="164"/>
         <image name="start button" width="477" height="164"/>
         <image name="title" width="538" height="466"/>
         <image name="weapons" width="477" height="151"/>
+        <image name="wood" width="750" height="1334"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="l4g-h3-y9K"/>

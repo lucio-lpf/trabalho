@@ -20,6 +20,9 @@ class RegisterViewController: UIViewController {
         super.viewDidLoad()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+    
     }
     
     deinit {
@@ -33,6 +36,17 @@ class RegisterViewController: UIViewController {
         self.signUpConstraint.constant = keyboardFrame.size.height + 20
         self.bottomConstraint.constant = 10
         self.topConstraint.constant = -20
+        UIView.animateWithDuration(1.0, animations: { () -> Void in
+            self.view.layoutIfNeeded()
+        })
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        var info = notification.userInfo!
+        var keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+        self.signUpConstraint.constant = 154
+        self.bottomConstraint.constant = 54
+        self.topConstraint.constant = 15
         UIView.animateWithDuration(1.0, animations: { () -> Void in
             self.view.layoutIfNeeded()
         })

@@ -33,8 +33,57 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
     
     var vida = 100
     
-    func animation () {
+    func animation() {
         
+        let bolinha = UIImageView(frame: frameInicio!.frame)
+        bolinha.image = UIImage(named: "Oval")
+        
+        self.view.addSubview(bolinha)
+        //animated transition
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.2 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) { () -> Void in
+            
+            if let speed = self.closerBeacon.beacon?.proximity.rawValue {
+                
+                if speed == 0 {
+                    UIView.animateWithDuration(1.0, animations: {
+                        bolinha.frame = self.frameFim.frame
+                        }) { (done) in
+                            
+                            self.animation()
+                            
+                            UIView.animateWithDuration(0.5, animations: {
+                                bolinha.alpha = 0
+                                })
+                    }
+                } else {
+                    UIView.animateWithDuration(Double(speed), animations: {
+                        bolinha.frame = self.frameFim.frame
+                        }) { (done) in
+                            
+                            self.animation()
+                            
+                            UIView.animateWithDuration(0.5, animations: {
+                                bolinha.alpha = 0
+                                })
+                    }
+                }
+            } else {
+                let speed: Double = 3.0
+                
+                UIView.animateWithDuration(Double(speed), animations: {
+                    bolinha.frame = self.frameFim.frame
+                    }) { (done) in
+                        
+                        self.animation()
+                        
+                        UIView.animateWithDuration(0.5, animations: {
+                            bolinha.alpha = 0
+                            })
+                }
+                
+            }
+            
+        }
         
     }
     
@@ -43,14 +92,7 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
         
         locationManager.startUpdatingLocation()
         
-//        BeaconStorage().getBeaconWithMinor(16, blockSuccess: { (object) -> Void in
-//            let beaconLife = object.objectForKey("Life") as! NSInteger
-//            
-//            println("Beacon encontrado.")
-//            println("Vida do beacon: \(beaconLife)")
-//        }) { (error) -> Void in
-//            println("Beacon nao encontrado")
-//        }
+        animation()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -65,6 +107,7 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.startMonitoringForRegion(beaconRegion)
         }
         
+        animation()
         
 //        BeaconStorage().updateBeaconLideWithMinor(15, newLife: 0)
         

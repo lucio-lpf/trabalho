@@ -212,14 +212,11 @@
                                 <state key="normal" image="weapons">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="Ovc-pG-UIP" kind="show" id="0TK-hG-iUK"/>
-                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRD-X9-IaE">
                                 <rect key="frame" x="0.0" y="-60" width="375" height="60"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destroy the tower!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ns-nA-lDE">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destroy the tower!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ns-nA-lDE">
                                         <rect key="frame" x="107" y="18" width="161" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -290,8 +287,10 @@
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="constraintNotification" destination="B5g-hQ-sob" id="8dF-Hi-7Il"/>
+                        <outlet property="fireImage" destination="Uua-P6-48C" id="EZe-hi-zPb"/>
                         <outlet property="frameFim" destination="Se5-5u-BwQ" id="UYK-JT-vpc"/>
                         <outlet property="frameInicio" destination="OCj-kL-WAu" id="tST-gl-YzG"/>
+                        <outlet property="labelDestroy" destination="3ns-nA-lDE" id="lmD-g0-FZC"/>
                         <outlet property="text" destination="Uua-P6-48C" id="gIv-eq-lra"/>
                         <outlet property="weaponImage" destination="RBU-8t-BQs" id="PKd-yY-M7u"/>
                     </connections>
@@ -309,11 +308,11 @@
                         <viewControllerLayoutGuide type="bottom" id="MIy-iT-md2"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="J80-CE-roZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7gV-ZW-Hae">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <connections>
                                     <outlet property="delegate" destination="Ovc-pG-UIP" id="iJa-I7-Yy9"/>
                                 </connections>

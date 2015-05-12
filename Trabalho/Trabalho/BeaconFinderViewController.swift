@@ -15,6 +15,10 @@ let identifier = "beacon.identifier"
 
 class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
     
+    @IBOutlet weak var fireImage: UIImageView!
+    
+    @IBOutlet weak var labelDestroy: UILabel!
+    
     @IBOutlet weak var constraintNotification: NSLayoutConstraint!
     @IBOutlet weak var frameFim: UIView!
     @IBOutlet weak var frameInicio: UIView!
@@ -157,6 +161,14 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
             
             closerBeacon.beacon = beaconsFound[0]
             
+            if self.closerBeacon.beacon.proximity.rawValue == 1 {
+                self.fireImage.image = UIImage(named: "immediate")
+            } else if self.closerBeacon.beacon.proximity.rawValue == 2 {
+                self.fireImage.image = UIImage(named: "near")
+            } else {
+                self.fireImage.image = UIImage(named: "far")
+            }
+            
             if canDestroyTower == false && closerBeacon.beacon.proximity.rawValue == 1 {
                 canDestroyTower = true
                 
@@ -164,6 +176,12 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
                     
                     self.closerBeacon.parseId = object.valueForKey("objectId") as! NSString
                     self.closerBeacon.life = object.valueForKey("Life") as! NSInteger
+                    
+                    if self.closerBeacon.life == 0 {
+                        self.labelDestroy.text = "Tower already dead"
+                    } else {
+                        self.labelDestroy.text = "Destroy the tower!"
+                    }
                     
                 }, blockFailure: { (error) -> Void in
                     

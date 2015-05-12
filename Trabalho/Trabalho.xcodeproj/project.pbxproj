@@ -37,6 +37,8 @@
 		71BDA9861AFBEC1D004DF152 /* RegisterStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BDA9851AFBEC1D004DF152 /* RegisterStorage.swift */; };
 		71F159171AFD305600586EDF /* Beacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F159161AFD305600586EDF /* Beacon.swift */; };
 		71F1591D1AFD402200586EDF /* BeaconStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F1591C1AFD402200586EDF /* BeaconStorage.swift */; };
+		71F339BC1B024DBB0070668A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F339BB1B024DBB0070668A /* MapViewController.swift */; };
+		71F339BF1B0254920070668A /* BeaconLocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F339BE1B0254920070668A /* BeaconLocationModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,8 @@
 		71BDA9851AFBEC1D004DF152 /* RegisterStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterStorage.swift; sourceTree = "<group>"; };
 		71F159161AFD305600586EDF /* Beacon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beacon.swift; sourceTree = "<group>"; };
 		71F1591C1AFD402200586EDF /* BeaconStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconStorage.swift; sourceTree = "<group>"; };
+		71F339BB1B024DBB0070668A /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		71F339BE1B0254920070668A /* BeaconLocationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconLocationModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,12 +132,12 @@
 			children = (
 				71BDA9821AFBE7DD004DF152 /* Trabalho-Bridging-Header.h */,
 				5AFEDBDA1AFA9882004D9990 /* AppDelegate.swift */,
+				71F339BD1B02546A0070668A /* Model */,
 				71BDA97D1AFBE483004DF152 /* Storage */,
 				71BDA97C1AFBE47E004DF152 /* View */,
 				71BDA97A1AFBE46D004DF152 /* ViewController */,
 				5AFEDBDC1AFA9882004D9990 /* Trabalho.xcdatamodeld */,
 				5AFEDBD81AFA9882004D9990 /* Supporting Files */,
-				71F159161AFD305600586EDF /* Beacon.swift */,
 			);
 			path = Trabalho;
 			sourceTree = "<group>";
@@ -193,6 +197,7 @@
 				5AFEDC201AFAA7AF004D9990 /* RegisterViewController.swift */,
 				5AFEDBDF1AFA9882004D9990 /* LoginViewController.swift */,
 				71BDA9781AFBE421004DF152 /* BeaconFinderViewController.swift */,
+				71F339BB1B024DBB0070668A /* MapViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -215,6 +220,15 @@
 				71F1591C1AFD402200586EDF /* BeaconStorage.swift */,
 			);
 			name = Storage;
+			sourceTree = "<group>";
+		};
+		71F339BD1B02546A0070668A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				71F159161AFD305600586EDF /* Beacon.swift */,
+				71F339BE1B0254920070668A /* BeaconLocationModel.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,9 +302,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71F339BF1B0254920070668A /* BeaconLocationModel.swift in Sources */,
 				5AFEDBE01AFA9882004D9990 /* LoginViewController.swift in Sources */,
 				5AFEDBDE1AFA9882004D9990 /* Trabalho.xcdatamodeld in Sources */,
 				71BDA9791AFBE421004DF152 /* BeaconFinderViewController.swift in Sources */,
+				71F339BC1B024DBB0070668A /* MapViewController.swift in Sources */,
 				71BDA9861AFBEC1D004DF152 /* RegisterStorage.swift in Sources */,
 				71BDA97F1AFBE6E8004DF152 /* LoginStorage.swift in Sources */,
 				5AFEDBDB1AFA9882004D9990 /* AppDelegate.swift in Sources */,

@@ -238,11 +238,11 @@
                                     <constraint firstAttribute="height" constant="350" id="V2Z-9K-VfB"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RBU-8t-BQs">
-                                <rect key="frame" x="87" y="150" width="200" height="200"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pick" translatesAutoresizingMaskIntoConstraints="NO" id="RBU-8t-BQs">
+                                <rect key="frame" x="65" y="127" width="246" height="246"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="gf0-TB-hsd"/>
-                                    <constraint firstAttribute="width" constant="200" id="iP1-o8-9Yi"/>
+                                    <constraint firstAttribute="height" constant="246" id="gf0-TB-hsd"/>
+                                    <constraint firstAttribute="width" constant="246" id="iP1-o8-9Yi"/>
                                 </constraints>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="far" translatesAutoresizingMaskIntoConstraints="NO" id="Uua-P6-48C">
@@ -262,9 +262,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="RBU-8t-BQs" firstAttribute="top" secondItem="9R2-ik-VhI" secondAttribute="bottom" constant="130" id="0Uu-5d-Mal"/>
+                            <constraint firstItem="RBU-8t-BQs" firstAttribute="top" secondItem="9R2-ik-VhI" secondAttribute="bottom" constant="107" id="0Uu-5d-Mal"/>
                             <constraint firstAttribute="centerX" secondItem="fRD-X9-IaE" secondAttribute="centerX" id="1FU-DZ-voI"/>
-                            <constraint firstItem="Se5-5u-BwQ" firstAttribute="centerX" secondItem="RBU-8t-BQs" secondAttribute="centerX" id="1LH-FU-jaF"/>
+                            <constraint firstItem="Se5-5u-BwQ" firstAttribute="centerX" secondItem="RBU-8t-BQs" secondAttribute="centerX" constant="-1" id="1LH-FU-jaF"/>
                             <constraint firstAttribute="centerX" secondItem="kaw-wV-S1I" secondAttribute="centerX" id="8EL-T2-R7m"/>
                             <constraint firstItem="fRD-X9-IaE" firstAttribute="top" secondItem="n2N-us-zgA" secondAttribute="top" constant="-60" id="B5g-hQ-sob"/>
                             <constraint firstItem="2Ea-d0-UvK" firstAttribute="top" secondItem="2Id-CA-mYz" secondAttribute="bottom" id="FW1-ST-2wm"/>
@@ -277,7 +277,7 @@
                             <constraint firstItem="2Id-CA-mYz" firstAttribute="top" secondItem="9R2-ik-VhI" secondAttribute="bottom" constant="-20" id="goo-P3-PDf"/>
                             <constraint firstItem="fRD-X9-IaE" firstAttribute="width" secondItem="2Id-CA-mYz" secondAttribute="width" id="kEs-2h-fBQ"/>
                             <constraint firstItem="Se5-5u-BwQ" firstAttribute="centerY" secondItem="RBU-8t-BQs" secondAttribute="centerY" id="pqd-Fz-xX5"/>
-                            <constraint firstItem="OCj-kL-WAu" firstAttribute="centerX" secondItem="RBU-8t-BQs" secondAttribute="centerX" constant="0.5" id="swb-Ra-djE"/>
+                            <constraint firstItem="OCj-kL-WAu" firstAttribute="centerX" secondItem="RBU-8t-BQs" secondAttribute="centerX" constant="-0.5" id="swb-Ra-djE"/>
                             <constraint firstItem="2Ea-d0-UvK" firstAttribute="top" secondItem="kaw-wV-S1I" secondAttribute="bottom" constant="36" id="ubr-NB-Fbt"/>
                             <constraint firstItem="kaw-wV-S1I" firstAttribute="top" secondItem="Uua-P6-48C" secondAttribute="bottom" constant="10" id="wyO-4L-Tgy"/>
                         </constraints>
@@ -481,6 +481,7 @@
         <image name="background" width="750" height="1334"/>
         <image name="far" width="750" height="221"/>
         <image name="logout" width="208" height="90"/>
+        <image name="pick" width="352" height="352"/>
         <image name="play button" width="1431" height="492"/>
         <image name="sign up" width="234" height="100"/>
         <image name="sign up button " width="477" height="164"/>

@@ -14,6 +14,8 @@ class Beacon {
     
     var parseId: NSString!
     var life: NSInteger!
+    var location: PFGeoPoint!
+    var destroyer: PFUser!
     
     var beacon: CLBeacon!
 }

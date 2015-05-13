@@ -13,8 +13,10 @@ import StoreKit
 
 
 class StoreViewController: UIViewController, SKProductsRequestDelegate, SKPaymentTransactionObserver{
-    @IBOutlet weak var removeAdsBtn: UIButton!
+    
+    
     var product_id = "com.app.Trabalho.catapult"
+    var defaults = NSUserDefaults.standardUserDefaults()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,14 +25,21 @@ class StoreViewController: UIViewController, SKProductsRequestDelegate, SKPaymen
         
     }
     
-    @IBAction func removeBanners(sender: UIButton) {
-        var alert = UIAlertController(title: "Remove Ads", message: "Do you want to remove the Ads?", preferredStyle: UIAlertControllerStyle.Alert)
+    @IBAction func selectPick(sender: AnyObject) {
+        defaults.setValue(false, forKey: "weapon")
+        
+//        self.dismissViewControllerAnimated(true) {}
+        self.performSegueWithIdentifier("backToWar", sender: nil)
+    }
+    @IBAction func selectCatapult(sender: UIButton) {
+        var alert = UIAlertController(title: "Buy the Catapult", message: "Do you want to buy the Catapult?", preferredStyle: UIAlertControllerStyle.Alert)
         
         alert.addAction(UIAlertAction(title: "Yes", style: .Default) { action -> Void in
             self.buyNonConsumable()
             })
         alert.addAction(UIAlertAction(title: "No", style: .Cancel) { action -> Void in
-                alert.dismissViewControllerAnimated(true, completion: nil)
+//                alert.dismissViewControllerAnimated(true, completion: nil)
+            self.performSegueWithIdentifier("backToWar", sender: nil)
                 })
         
         self.presentViewController(alert, animated: true, completion: nil)
@@ -86,13 +95,15 @@ class StoreViewController: UIViewController, SKProductsRequestDelegate, SKPaymen
             if let trans:SKPaymentTransaction = transaction as? SKPaymentTransaction{
             switch trans.transactionState {
             case .Purchased:
+                if(defaults.valueForKey("weapon") as! Bool == false){
                 println("Product Purchased");
             SKPaymentQueue.defaultQueue().finishTransaction(transaction as! SKPaymentTransaction)
-            removeAds()
+            setWeapon()
             break;
+            }
             case .Restored:
                 println("Product Restored");
-            removeAds()
+            setWeapon()
             break;
             case .Failed:
                 println("Purchased Failed");
@@ -106,10 +117,13 @@ class StoreViewController: UIViewController, SKProductsRequestDelegate, SKPaymen
         }
     }
     
-    func removeAds() {
+    func setWeapon() {
         var defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setBool(true, forKey: "ads")
+        defaults.setBool(true, forKey: "weapon")
         //defaults.synchronize()
+        
+        self.performSegueWithIdentifier("backToWar", sender: nil)
+//        self.dismissViewControllerAnimated(true) {}
     }
     
     override func didReceiveMemoryWarning() {

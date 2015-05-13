@@ -306,10 +306,10 @@
             </objects>
             <point key="canvasLocation" x="2521.5" y="718.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Store View Controller-->
         <scene sceneID="A3i-bB-YtW">
             <objects>
-                <viewController id="qG0-he-hW1" sceneMemberID="viewController">
+                <viewController id="qG0-he-hW1" customClass="StoreViewController" customModule="Trabalho" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sNI-aQ-XBs"/>
                         <viewControllerLayoutGuide type="bottom" id="HlU-98-sze"/>
@@ -371,7 +371,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oLf-aC-2n5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3057.5" y="725.5"/>
+            <point key="canvasLocation" x="3056.5" y="718.5"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="edQ-8y-hly">

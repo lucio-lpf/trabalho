@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="V7w-6K-cST">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="V7w-6K-cST">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -74,6 +74,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="sfH-xY-5sN" secondAttribute="trailing" constant="-16" id="5QK-Tx-WsW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="X2E-bt-aAI" secondAttribute="trailing" constant="42" id="9JL-M8-tC4"/>
                             <constraint firstAttribute="centerX" secondItem="th9-nS-VR9" secondAttribute="centerX" id="B2j-wZ-55O"/>
                             <constraint firstAttribute="centerX" secondItem="xzQ-vd-wrp" secondAttribute="centerX" id="C4j-px-iVj"/>
@@ -81,13 +82,16 @@
                             <constraint firstItem="sfH-xY-5sN" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Deq-zc-ffC"/>
                             <constraint firstAttribute="bottom" secondItem="sfH-xY-5sN" secondAttribute="bottom" id="EVr-yL-v2U"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="th9-nS-VR9" secondAttribute="bottom" constant="30" id="Gbi-im-aWd"/>
+                            <constraint firstItem="sfH-xY-5sN" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="SoU-xR-2HA"/>
                             <constraint firstItem="zIk-c9-3df" firstAttribute="top" secondItem="X2E-bt-aAI" secondAttribute="bottom" constant="16" id="UF0-x4-34g"/>
                             <constraint firstItem="xzQ-vd-wrp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="UTZ-qg-vuV"/>
+                            <constraint firstItem="sfH-xY-5sN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="aTD-BQ-ebk"/>
                             <constraint firstAttribute="centerX" secondItem="Wjg-MU-tuk" secondAttribute="centerX" id="aVQ-a1-vI6"/>
                             <constraint firstItem="sfH-xY-5sN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cAQ-dg-EWi"/>
                             <constraint firstItem="Wjg-MU-tuk" firstAttribute="top" secondItem="zIk-c9-3df" secondAttribute="bottom" constant="30" id="cz7-4Q-MDC"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Wjg-MU-tuk" secondAttribute="bottom" constant="154" id="fhJ-Af-lg9"/>
                             <constraint firstItem="zIk-c9-3df" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="42" id="gKp-eR-Cnm"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sfH-xY-5sN" secondAttribute="bottom" id="j8z-PW-Ha2"/>
                             <constraint firstAttribute="trailing" secondItem="sfH-xY-5sN" secondAttribute="trailing" id="jef-dW-zWy"/>
                             <constraint firstItem="X2E-bt-aAI" firstAttribute="top" secondItem="xzQ-vd-wrp" secondAttribute="bottom" constant="54" id="luz-he-8Gv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zIk-c9-3df" secondAttribute="trailing" constant="42" id="oga-PU-KrI"/>
@@ -212,6 +216,9 @@
                                 <state key="normal" image="weapons">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="qG0-he-hW1" kind="show" id="Gxw-o5-MNv"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRD-X9-IaE">
                                 <rect key="frame" x="0.0" y="-60" width="375" height="60"/>
@@ -491,6 +498,6 @@
         <image name="wood" width="750" height="1334"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="l4g-h3-y9K"/>
+        <segue reference="Lgt-AA-YHz"/>
     </inferredMetricsTieBreakers>
 </document>

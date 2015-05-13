@@ -11,7 +11,7 @@ import MapKit
 
 class MapViewController: UIViewController, MKMapViewDelegate {
     
-    @IBOutlet weak var mapVIew: MKMapView!
+    @IBOutlet weak var mapView: MKMapView!
     
     var beacons: [Beacon] = []
     
@@ -21,6 +21,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         BeaconStorage().getBeaconLocations({ (beaconsArray) -> Void in
             
             println("Success")
+            
+            self.beacons.removeAll(keepCapacity: true)
             
             for beacon in beaconsArray {
                 self.beacons.append(beacon)
@@ -43,7 +45,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             annotation.coordinate.latitude = beacon.location.latitude
             annotation.coordinate.longitude = beacon.location.longitude
             
-            mapVIew.addAnnotation(annotation)
+            mapView.addAnnotation(annotation)
         }
     }
     

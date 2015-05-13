@@ -41,8 +41,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
         println("PUSH")
         
-        if let info = userInfo["content-available"] {
-            NSNotificationCenter.defaultCenter().postNotificationName("gameOver", object: nil)
+        if let info = userInfo["all-towers-down"] {
+            if info as! NSInteger == 1 {
+                NSNotificationCenter.defaultCenter().postNotificationName("gameOver", object: nil)
+            }
         }
         
         completionHandler(.NoData)

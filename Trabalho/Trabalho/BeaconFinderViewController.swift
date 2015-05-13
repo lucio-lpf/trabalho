@@ -37,6 +37,8 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
     
     var vida = 100
     
+    var silentPushDone = false
+    
     func animation() {
         
         let bolinha = UIImageView(frame: frameInicio!.frame)
@@ -96,7 +98,11 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
         
         locationManager.startUpdatingLocation()
         
-        animation()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "gameOver", name: "gameOver", object: nil)
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            self.animation()
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -236,6 +242,16 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
             }, blockFailure: { (error) -> Void in
                 println(error.description)
             })
+        }
+    }
+    
+    func gameOver() {
+        
+        if silentPushDone == false {
+            silentPushDone = true
+            self.performSegueWithIdentifier("treta", sender: nil)
+        } else {
+            println("Silent já disparada anteriormente")
         }
     }
     

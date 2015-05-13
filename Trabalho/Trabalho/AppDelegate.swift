@@ -39,8 +39,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
-        println("SILENT PUSH")
-//        println(userInfo["title"] as! String)
+        println("PUSH")
+        
+        if let info = userInfo["content-available"] {
+            NSNotificationCenter.defaultCenter().postNotificationName("gameOver", object: nil)
+        }
+        
         completionHandler(.NoData)
     }
     

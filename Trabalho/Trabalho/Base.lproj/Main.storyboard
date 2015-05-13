@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="V7w-6K-cST">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -145,7 +145,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="vyn-vK-YZP" kind="show" id="4QV-C2-flY"/>
+                                    <segue destination="aJS-gT-bS7" kind="show" id="4QV-C2-flY"/>
                                 </connections>
                             </button>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="Find and destroy the" translatesAutoresizingMaskIntoConstraints="NO" id="VQ2-SK-8MZ">
@@ -204,7 +204,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="2Id-CA-mYz">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" misplaced="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="2Id-CA-mYz">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kaw-wV-S1I">
@@ -237,7 +237,7 @@
                                     <constraint firstAttribute="centerX" secondItem="3ns-nA-lDE" secondAttribute="centerX" id="zRq-ui-hRj"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Se5-5u-BwQ">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Se5-5u-BwQ">
                                 <rect key="frame" x="12" y="75" width="350" height="350"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -245,7 +245,7 @@
                                     <constraint firstAttribute="height" constant="350" id="V2Z-9K-VfB"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pick" translatesAutoresizingMaskIntoConstraints="NO" id="RBU-8t-BQs">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="pick" translatesAutoresizingMaskIntoConstraints="NO" id="RBU-8t-BQs">
                                 <rect key="frame" x="65" y="127" width="246" height="246"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="246" id="gf0-TB-hsd"/>
@@ -258,7 +258,7 @@
                                     <constraint firstAttribute="width" secondItem="Uua-P6-48C" secondAttribute="height" multiplier="346:101" id="d2e-11-qgR"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OCj-kL-WAu">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OCj-kL-WAu">
                                 <rect key="frame" x="185" y="248" width="5" height="5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -289,6 +289,7 @@
                             <constraint firstItem="kaw-wV-S1I" firstAttribute="top" secondItem="Uua-P6-48C" secondAttribute="bottom" constant="10" id="wyO-4L-Tgy"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="X3d-lF-fkH"/>
                     <value key="contentSizeForViewInPopover" type="size" width="375" height="667"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
@@ -300,11 +301,12 @@
                         <outlet property="labelDestroy" destination="3ns-nA-lDE" id="lmD-g0-FZC"/>
                         <outlet property="text" destination="Uua-P6-48C" id="gIv-eq-lra"/>
                         <outlet property="weaponImage" destination="RBU-8t-BQs" id="PKd-yY-M7u"/>
+                        <segue destination="iGT-Sq-Bms" kind="show" identifier="treta" id="yT1-gw-Fk9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jlh-Kh-VkG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2521.5" y="718.5"/>
+            <point key="canvasLocation" x="3013.5" y="718.5"/>
         </scene>
         <!--Store View Controller-->
         <scene sceneID="A3i-bB-YtW">
@@ -478,6 +480,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pUv-MJ-eeH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="244" y="223"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="IJg-Lt-Ku5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aJS-gT-bS7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="53M-R3-oUJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vyn-vK-YZP" kind="relationship" relationship="rootViewController" id="Flh-qI-XIo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CiH-Ev-nSS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2463.5" y="718.5"/>
         </scene>
     </scenes>
     <resources>

@@ -117,10 +117,10 @@
 		5AFEDBCC1AFA9882004D9990 = {
 			isa = PBXGroup;
 			children = (
-				5AFEDC1F1AFAA5B7004D9990 /* frameworks */,
 				5AFEDBD71AFA9882004D9990 /* Trabalho */,
 				5AFEDBF01AFA9882004D9990 /* TrabalhoTests */,
 				5AFEDBD61AFA9882004D9990 /* Products */,
+				5AFEDC1F1AFAA5B7004D9990 /* frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -451,7 +451,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Trabalho/Trabalho-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -471,7 +471,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Trabalho/Trabalho-Bridging-Header.h";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

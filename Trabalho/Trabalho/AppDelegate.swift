@@ -38,6 +38,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        println("PUSH")
+        
+        if let info = userInfo["all-towers-down"] {
+            if info as! NSInteger == 1 {
+                NSNotificationCenter.defaultCenter().postNotificationName("gameOver", object: nil)
+            }
+        }
+        
+        completionHandler(.NoData)
+    }
+    
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         // Store the deviceToken in the current Installation and save it to Parse
         let installation = PFInstallation.currentInstallation()

@@ -20,7 +20,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        userField.text = "CaioTheDestroyer"
+        userField.text = "caio"
         passField.text = "123"
         
         navigationController!.navigationBar.translucent = true

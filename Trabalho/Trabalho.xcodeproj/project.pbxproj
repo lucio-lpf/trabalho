@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5AD191C81AFD41C500A9B75C /* PushKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AD191C71AFD41C500A9B75C /* PushKit.framework */; };
+		5AD191CA1B02857500A9B75C /* StoreStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD191C91B02857500A9B75C /* StoreStorage.swift */; };
+		5AD191CC1B02859E00A9B75C /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD191CB1B02859E00A9B75C /* StoreViewController.swift */; };
 		5AFEDBDB1AFA9882004D9990 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFEDBDA1AFA9882004D9990 /* AppDelegate.swift */; };
 		5AFEDBDE1AFA9882004D9990 /* Trabalho.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5AFEDBDC1AFA9882004D9990 /* Trabalho.xcdatamodeld */; };
 		5AFEDBE01AFA9882004D9990 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFEDBDF1AFA9882004D9990 /* LoginViewController.swift */; };
@@ -43,9 +45,12 @@
 
 /* Begin PBXFileReference section */
 		5AD191C71AFD41C500A9B75C /* PushKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PushKit.framework; path = System/Library/Frameworks/PushKit.framework; sourceTree = SDKROOT; };
+		5AD191C91B02857500A9B75C /* StoreStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreStorage.swift; sourceTree = "<group>"; };
+		5AD191CB1B02859E00A9B75C /* StoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
+		5AD191CD1B02C51000A9B75C /* comtrabalhodistribution.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = comtrabalhodistribution.mobileprovision; sourceTree = "<group>"; };
 		5AFEDBD51AFA9882004D9990 /* Trabalho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trabalho.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AFEDBD91AFA9882004D9990 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5AFEDBDA1AFA9882004D9990 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5AFEDBDA1AFA9882004D9990 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; usesTabs = 0; };
 		5AFEDBDD1AFA9882004D9990 /* Trabalho.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Trabalho.xcdatamodel; sourceTree = "<group>"; };
 		5AFEDBDF1AFA9882004D9990 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5AFEDBE21AFA9882004D9990 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -145,6 +150,7 @@
 		5AFEDBD81AFA9882004D9990 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5AD191CD1B02C51000A9B75C /* comtrabalhodistribution.mobileprovision */,
 				5AFEDBD91AFA9882004D9990 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -198,6 +204,7 @@
 				5AFEDBDF1AFA9882004D9990 /* LoginViewController.swift */,
 				71BDA9781AFBE421004DF152 /* BeaconFinderViewController.swift */,
 				71F339BB1B024DBB0070668A /* MapViewController.swift */,
+				5AD191CB1B02859E00A9B75C /* StoreViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -218,6 +225,7 @@
 				71BDA97E1AFBE6E8004DF152 /* LoginStorage.swift */,
 				71BDA9851AFBEC1D004DF152 /* RegisterStorage.swift */,
 				71F1591C1AFD402200586EDF /* BeaconStorage.swift */,
+				5AD191C91B02857500A9B75C /* StoreStorage.swift */,
 			);
 			name = Storage;
 			sourceTree = "<group>";
@@ -262,7 +270,6 @@
 				TargetAttributes = {
 					5AFEDBD41AFA9882004D9990 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = TY5QM4UU69;
 					};
 				};
 			};
@@ -305,8 +312,10 @@
 				71F339BF1B0254920070668A /* BeaconLocationModel.swift in Sources */,
 				5AFEDBE01AFA9882004D9990 /* LoginViewController.swift in Sources */,
 				5AFEDBDE1AFA9882004D9990 /* Trabalho.xcdatamodeld in Sources */,
+				5AD191CA1B02857500A9B75C /* StoreStorage.swift in Sources */,
 				71BDA9791AFBE421004DF152 /* BeaconFinderViewController.swift in Sources */,
 				71F339BC1B024DBB0070668A /* MapViewController.swift in Sources */,
+				5AD191CC1B02859E00A9B75C /* StoreViewController.swift in Sources */,
 				71BDA9861AFBEC1D004DF152 /* RegisterStorage.swift in Sources */,
 				71BDA97F1AFBE6E8004DF152 /* LoginStorage.swift in Sources */,
 				5AFEDBDB1AFA9882004D9990 /* AppDelegate.swift in Sources */,
@@ -355,7 +364,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -377,7 +387,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = iOSTeam_Provisioning_Profile_comappTrabalho;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -401,7 +411,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -416,7 +427,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = iOSTeam_Provisioning_Profile_comappTrabalho;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -428,7 +439,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -440,6 +451,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Trabalho/Trabalho-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -448,7 +460,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -459,6 +471,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Trabalho/Trabalho-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

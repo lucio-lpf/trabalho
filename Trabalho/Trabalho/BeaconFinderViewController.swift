@@ -15,11 +15,15 @@ let identifier = "beacon.identifier"
 
 class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
     
+    @IBOutlet weak var fireImage: UIImageView!
+    
+    var defaults = NSUserDefaults.standardUserDefaults()
+    @IBOutlet weak var labelDestroy: UILabel!
+    
     @IBOutlet weak var constraintNotification: NSLayoutConstraint!
     @IBOutlet weak var frameFim: UIView!
     @IBOutlet weak var frameInicio: UIView!
     @IBOutlet weak var weaponImage: UIImageView!
-    @IBOutlet weak var text: UIImageView!
     
     var beaconsFound: [CLBeacon] = [CLBeacon]()
     let locationManager = CLLocationManager()
@@ -32,6 +36,8 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
     var userLocation: CLLocation!
     
     var vida = 100
+    
+    var silentPushDone = false
     
     func animation() {
         
@@ -92,7 +98,11 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
         
         locationManager.startUpdatingLocation()
         
-        animation()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "gameOver", name: "gameOver", object: nil)
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            self.animation()
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -121,7 +131,15 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
+        if let weaponBoolean = defaults.valueForKey("weapon") as? Bool {
+            if weaponBoolean == true {
+                weaponImage.image = UIImage(named: "catapult")
+            } else {
+            weaponImage.image = UIImage(named: "pick")
+            }
+        } else {
+            weaponImage.image = UIImage(named: "pick")
+        }
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
@@ -157,6 +175,14 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
             
             closerBeacon.beacon = beaconsFound[0]
             
+            if self.closerBeacon.beacon.proximity.rawValue == 1 {
+                self.fireImage.image = UIImage(named: "immediate")
+            } else if self.closerBeacon.beacon.proximity.rawValue == 2 {
+                self.fireImage.image = UIImage(named: "near")
+            } else {
+                self.fireImage.image = UIImage(named: "far")
+            }
+            
             if canDestroyTower == false && closerBeacon.beacon.proximity.rawValue == 1 {
                 canDestroyTower = true
                 
@@ -164,6 +190,12 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
                     
                     self.closerBeacon.parseId = object.valueForKey("objectId") as! NSString
                     self.closerBeacon.life = object.valueForKey("Life") as! NSInteger
+                    
+                    if self.closerBeacon.life == 0 {
+                        self.labelDestroy.text = "Tower already dead"
+                    } else {
+                        self.labelDestroy.text = "Destroy the tower!"
+                    }
                     
                 }, blockFailure: { (error) -> Void in
                     
@@ -205,8 +237,15 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent) {
         if canDestroyTower == true {
             
-            closerBeacon.life! -= 10
-            
+            if let weaponBoolean = defaults.valueForKey("weapon") as? Bool {
+                if weaponBoolean == true {
+                    closerBeacon.life! -= 20
+                } else {
+                    closerBeacon.life! -= 10
+                }
+            } else {
+                closerBeacon.life! -= 10
+            }
 //            BeaconStorage().update
             
             BeaconStorage().updateBeaconLifeWithId(closerBeacon.parseId, newLife: closerBeacon.life, userLocation: locationManager.location, blockSuccess: { () -> Void in
@@ -219,6 +258,20 @@ class BeaconFinderViewController: UIViewController, CLLocationManagerDelegate {
                 println(error.description)
             })
         }
+    }
+    
+    func gameOver() {
+        
+        if silentPushDone == false {
+            silentPushDone = true
+            self.performSegueWithIdentifier("treta", sender: nil)
+        } else {
+            println("Silent já disparada anteriormente")
+        }
+    }
+    
+    @IBAction func unwindFromStore(segue: UIStoryboardSegue) {
+        println("Bla")
     }
     
 }

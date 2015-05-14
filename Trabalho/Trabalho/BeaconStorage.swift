@@ -56,28 +56,27 @@ class BeaconStorage {
     
     func updateBeaconLifeWithId(id: NSString, newLife: NSInteger, userLocation: CLLocation, blockSuccess: () -> Void, blockFailure: (NSError!) -> Void) {
         
+        let object = PFObject(withoutDataWithClassName: "Tower", objectId: id as String)
+        object.setValue(newLife, forKey: "Life")
+        
+        var location = PFGeoPoint(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
+        
+        object.setValue(location, forKey: "location")
+        
         if newLife < 0 {
-            let alert = UIAlertView(title: "Impossible!", message: "The tower had already been destroyed.", delegate: nil, cancelButtonTitle: "OK")
-            alert.show()
-        } else {
-            let object = PFObject(withoutDataWithClassName: "Tower", objectId: id as String)
-            object.setValue(newLife, forKey: "Life")
-            
-            var location = PFGeoPoint(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
-            
-            object.setValue(location, forKey: "location")
-            
-            if newLife == 0 {
-                
-                object.setValue(PFUser.currentUser()!, forKey: "destroyer")
-                
-                // da parabens pro carinha que destuiu
-                let alert = UIAlertView(title: "Congratulations!!!", message: "You destroyed a tower.", delegate: nil, cancelButtonTitle: "Ok")
-                alert.show()
-            }
-            
-            object.saveInBackground()
+            object.setValue(0, forKey: "Life")
         }
+        
+        if newLife == 0 {
+        
+            object.setValue(PFUser.currentUser()!, forKey: "destroyer")
+            
+            // da parabens pro carinha que destuiu
+            let alert = UIAlertView(title: "Congratulations!!!", message: "You destroyed a tower.", delegate: nil, cancelButtonTitle: "Ok")
+            alert.show()
+        }
+        
+        object.saveInBackground()
     }
     
 //    func updateBeaconLideWithMinor(minor: NSInteger, newLife: NSInteger) {
